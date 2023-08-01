@@ -167,7 +167,7 @@ $nomor = $halaman_awal + 1;
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
                             action="tambah_admin.php">
                             <div class="modal-header">
-                                <h4 class="modal-title">Tambah Tujuan Kunjungan</h4>
+                                <h4 class="modal-title">Tambah Data Pengguna VPS</h4>
                                 <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">&times;</button>
                             </div>
