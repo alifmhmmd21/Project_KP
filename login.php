@@ -30,7 +30,7 @@
 					<div class="login-wrap p-4 p-md-5">
                     <img src="asset/logo.png" style="display: block; margin-left: auto; margin-right:auto; width:200px; height:50px;">
                     <br>
-                    <h5 class="mb-4" style="background:-webkit-linear-gradient(#000000,#F21717); -webkit-background-clip: text;-webkit-text-fill-color: transparent; text-align:center;"> Login Admin<br>PT. Teknologi Server Indonesia</h5>
+                    <h5 class="mb-4" style="background:-webkit-linear-gradient(#000000,#F21717); -webkit-background-clip:text; -webkit-text-fill-color: transparent; text-align:center;"> Login Admin<br>PT. Teknologi Server Indonesia</h5>
                     
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="ceklogin.php">
                             <div class="input-group flex-nowrap">
