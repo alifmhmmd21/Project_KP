@@ -8,11 +8,11 @@ $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
 $previous = $halaman - 1;
 $next = $halaman + 1;
 
-$data = mysqli_query($conn, "select * from penggunavps");
+$data = mysqli_query($conn, "select * from visiter");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 
-$query = mysqli_query($conn, "select * from penggunavps limit $halaman_awal, $batas");
+$query = mysqli_query($conn, "select * from visiter limit $halaman_awal, $batas");
 $nomor = $halaman_awal + 1;
 
 ?>
@@ -28,9 +28,9 @@ $nomor = $halaman_awal + 1;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/data.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/data.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -42,10 +42,11 @@ $nomor = $halaman_awal + 1;
 
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-        <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Pengguna VPS</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
-        <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="login.php">
+        <a href="#" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
+        <a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a>
+        <a href="#" class="w3-bar-item w3-button">Data Pengunjung</a>
+        <a href="#" class="w3-bar-item w3-button">Data Pengajar</a>
+        <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="logout.php">
             <i class="fa fa-power-off fa-lg">
                 <h7>
                     <b> Logout </b>
@@ -69,7 +70,7 @@ $nomor = $halaman_awal + 1;
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2><b>Data Pengguna VPS</b></h2>
+                                    <h2>Data <b>Kunjungan</b></h2>
                                 </div>
                                 <div class="col-sm-4">
                                     <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
@@ -87,9 +88,8 @@ $nomor = $halaman_awal + 1;
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>
                                     <th class="col-md-3">Nomor HP</th>
-                                    <th class="col-md-4">SubDomain</th>
-                                    <th class="col-md-4">Domain</th>
-                                    <th class="col-sm-1">Aksi</th>
+                                    <th class="col-md-4">Tujuan Kunjungan</th>
+                                    <th class="col-sm-1"> </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -101,7 +101,7 @@ $nomor = $halaman_awal + 1;
                                             <?php echo $data['id']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['ktp']; ?>
+                                            <?php echo $data['no_ktp']; ?>
                                         </td>
                                         <td>
                                             <?php echo $data['nama']; ?>
@@ -110,13 +110,10 @@ $nomor = $halaman_awal + 1;
                                             <?php echo $data['alamat']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['hp']; ?>
+                                            <?php echo $data['no_hp']; ?>
                                         </td>
-                                        <td>
-                                            <?php echo $data['subdomain']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data['domain']; ?>
+                                        <td style="overflow: hidden">
+                                            <?php echo $data['tujuan']; ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
@@ -207,7 +204,20 @@ $nomor = $halaman_awal + 1;
         </div>
 
     </div>
-    <script src="js/tujuan.js"></script>
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "18%";
+            document.getElementById("mySidebar").style.width = "18%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+    <!-- <script src="js/tujuan.js"></script>                         -->
 </body>
 
 </html>
