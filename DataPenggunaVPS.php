@@ -160,12 +160,11 @@ $nomor = $halaman_awal + 1;
             </div>
 
             <!-- Untuk Tampilan Add -->
-            <!-- Edit Modal HTML -->
             <div id="tambah-teks" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
-                            action="tambah_admin.php">
+                            action="Tambah_PenggunaVPS.php">
                             <div class="modal-header">
                                 <h4 class="modal-title">Tambah Data Pengguna VPS</h4>
                                 <button type="button" class="close" data-dismiss="modal"
