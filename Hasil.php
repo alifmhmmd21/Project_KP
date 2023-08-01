@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Tahap Process</title>
+  	<title>Processing ...</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -39,7 +39,11 @@
 						<br>
 						<h5 class="mb-4" style="background:-webkit-linear-gradient(#000000,#F21717,#000000,#000000);-webkit-background-clip: text;-webkit-text-fill-color: transparent; text-align:center;">Data Anda sudah terkirim <br>Mohon tunggu konfirmasi dari pihak<br> PT. Teknologi Server Indonesia</h5>
 						<br>
-						<div class="loader" style="position: absolute; top: 80%; left: 45%;"></div>
+						<div class="loader" style="position: absolute; top: 68%; left: 45%;"></div>
+						<br>
+						<div class="back" style="position: absolute; top: 85%; left: 36%;">
+							<a type="submit" autocomplete="off" value="Login" class="btn btn-danger " href="TampilanHalaman.php"> Kembali</a>
+						</div>
 					<div class="d-flex">
 		      	</div>
 	        </div>

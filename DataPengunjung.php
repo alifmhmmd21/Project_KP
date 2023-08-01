@@ -27,9 +27,9 @@ $nomor = $halaman_awal+1;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/data.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/data.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -45,13 +45,13 @@ $nomor = $halaman_awal+1;
         <a href="#" class="w3-bar-item w3-button">Link 1</a>
         <a href="#" class="w3-bar-item w3-button">Link 2</a>
         <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            <a class= "w3-bar-item w3-button"  style="position: absolute; left: 0;bottom: 0;" href="login.php">
-                <i class="fa fa-power-off fa-lg"> 
-                    <h7> 
-                        <b> Logout </b>
-                    </h7>
-                </i>
-            </a>
+        <a class= "w3-bar-item w3-button"  style="position: absolute; left: 0;bottom: 0;" href="logout.php">
+            <i class="fa fa-power-off fa-lg"> 
+                <h7> 
+                    <b> Logout </b>
+                </h7>
+            </i>
+        </a>
     </div>
     
     </div>
@@ -174,6 +174,19 @@ $nomor = $halaman_awal+1;
         </div>
 
     </div>
-    <script src="js/tujuan.js"></script>                        
+    <script>
+        function w3_open() {
+        document.getElementById("main").style.marginLeft = "18%";
+        document.getElementById("mySidebar").style.width = "18%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
+        }
+     </script>
+    <!-- <script src="js/tujuan.js"></script>                         -->
 </body>
 </html>
