@@ -15,6 +15,9 @@ $total_halaman = ceil($jumlah_data / $batas);
 $query = mysqli_query($conn, "select * from penggunavps limit $halaman_awal, $batas");
 $nomor = $halaman_awal + 1;
 
+$katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
+$sqltambahan = "";
+
 ?>
 
 <html lang="en">
@@ -83,7 +86,7 @@ $nomor = $halaman_awal + 1;
                             <div class="row">
                                 <div class="col-5">
                                     <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
-                                        name="katakunci" value="" />
+                                        name="katakunci" value="<?php echo $katakunci?>" />
                                 </div>
                                 <div class="col-auto">
                                     <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
@@ -107,6 +110,17 @@ $nomor = $halaman_awal + 1;
                             </thead>
                             <tbody>
                                 <?php
+                                if ($katakunci != '') {
+                                    $array_katakunci = explode(" ", $katakunci);
+                                    for ($x = 0; $x < count($array_katakunci); $x++) {
+                                        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
+                                    }
+                                    $sqltambahan = " where" . implode(" or", $sqlcari);
+                                }
+                                
+                                $sql1 = "select * from penggunavps $sqltambahan";
+                                $q1 = mysqli_query($conn, $sql1);
+                                $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
