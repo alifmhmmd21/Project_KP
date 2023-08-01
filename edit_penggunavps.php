@@ -9,33 +9,35 @@ if(isset($_GET['id'])){
 }
 
 if($id != ""){
-    $sql1       = "select * from visiter where id='$id'";
+    $sql1       = "select * from penggunavps where id='$id'";
     $q1         = mysqli_query($conn,$sql1);
     $r1         = mysqli_fetch_array($q1);
-    $noktp      = $r1['no_ktp'];
+    $ktp        = $r1['ktp'];
     $nama       = $r1['nama'];
     $alamat     = $r1['alamat'];
-    $nohp       = $r1['no_hp'];
-    $tujuan     = $r1['tujuan'];
+    $hp         = $r1['hp'];
+    $subdomain  = $r1['subdomain'];
+    $domain     = $r1['domain'];
     
 }
 
 if (isset($_POST['simpan'])) {
-    $noktp        = $_POST['noktp'];
+    $ktp        = $_POST['ktp'];
     $nama       = $_POST['nama'];
     $alamat     = $_POST['alamat'];
-    $nohp         = $_POST['nohp'];
-    $tujuan     = $_POST['tujuan'];
+    $hp         = $_POST['hp'];
+    $subdomain  = $_POST['subdomain'];
+    $domain     = $_POST['domain'];
 
     if (empty($error)) {
         if($id != ""){
-            $sql1 = "update visiter set no_ktp ='$noktp',nama = '$nama',alamat = '$alamat', no_hp = '$nohp', tujuan = '$tujuan' where id = '$id'";
+            $sql1 = "update penggunavps set ktp ='$ktp',nama = '$nama',alamat = '$alamat', hp = '$hp', subdomain='$subdomain',domain='$domain' where id = '$id'";
         }
         $q1       = mysqli_query($conn,$sql1);
         if ($q1) {
-            header('location:DataPengunjung.php');
+            header('location:DataPenggunaVPS.php');
         } else {
-            header("location:editadmin.php?id");
+            header("location:edit_penggunavps.php?id");
 
         }
     }
@@ -58,12 +60,12 @@ if (isset($_POST['simpan'])) {
             <div class="modal-content">
                 <form  method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
                     <div class="modal-header">
-                        <h2 class="modal-title">Edit Data Kunjungan</h>
+                        <h2 class="modal-title">Edit Data Pengguna VPS</h>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
                             <label>No KTP</label>
-                            <input type="text" class="form-control" id="noktp" value=" <?php echo $noktp?>" name="noktp">
+                            <input type="text" class="form-control" id="ktp" value=" <?php echo $ktp?>" name="noktp">
                         </div>
                         <div class="form-group">
                             <label>Nama</label>
@@ -75,15 +77,19 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="text" class="form-control" id="nohp" value=" <?php echo $nohp?>" name="nohp">
+                            <input type="text" class="form-control" id="hp" value=" <?php echo $hp?>" name="nohp">
                         </div>
                         <div class="form-group">
-                            <label>Tujuan Kunjungan</label>
-                            <input type="text" class="form-control" id="tujuan" value=" <?php echo $tujuan ?>" name="tujuan">
+                            <label>SubDomain</label>
+                            <input type="text" class="form-control" id="subdomain" value=" <?php echo $subdomain ?>" name="subdomain">
+                        </div>
+                        <div class="form-group">
+                            <label>Domain</label>
+                            <input type="text" class="form-control" id="domain" value=" <?php echo $domain ?>" name="domain">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="DataPengunjung.php">
+                        <a href="DataPenggunaVPS.php">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </a>
                         <input type="submit" class="btn btn-success" name="simpan" value="Simpan Data">
