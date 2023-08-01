@@ -2,13 +2,17 @@
 session_start();
 include 'quer/config.php';
 
-$user		= $_POST['user'];
-$pass		= $_POST['password'];
+$user		= stripcslashes($_POST['user']);
+$pass		= stripcslashes($_POST['password']);
+$user		= mysqli_escape_string($conn,$user);
+$pass		= mysqli_escape_string($conn,$pass);
+
 
 $proses 	= "SELECT * FROM admin WHERE username ='$user' AND password ='$pass'";
 $login		= mysqli_query($conn, $proses);
 
 $cek		= mysqli_num_rows($login);
+	
 
 if ($cek > 0) {
 	
