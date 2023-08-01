@@ -2,6 +2,8 @@
 
 <?php
 include 'quer/config.php';
+
+/*
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
@@ -14,9 +16,36 @@ $total_halaman = ceil($jumlah_data / $batas);
 
 $query = mysqli_query($conn, "select * from penggunavps limit $halaman_awal, $batas");
 $nomor = $halaman_awal + 1;
+*/
+
+
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
+$per_halaman = 3;
+
+if ($katakunci != '') {
+    $array_katakunci = explode(" ", $katakunci);
+    for ($x = 0; $x < count($array_katakunci); $x++) {
+        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
+    }
+    $sqltambahan = " where" . implode(" or", $sqlcari);
+}
+//
+
+$sql1 = "select * from penggunavps $sqltambahan";
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
+$q1 = mysqli_query($conn, $sql1);
+$total = mysqli_num_rows($q1);
+$pages = ceil($total / $per_halaman);
+$nomor = $mulai + 1;
+$sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
+//
+
+
+$query = mysqli_query($conn, $sql1);
+
 
 ?>
 
@@ -81,19 +110,27 @@ $sqltambahan = "";
                                         <span>Tambah</span></a>
                                 </div>
                             </div>
+                            <!--Search bar -->
                         </div>
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-5">
-                                    <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
-                                        name="katakunci" value="<?php echo $katakunci?>" />
+                        <form>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
+                                            name="katakunci" value="<?php echo $katakunci ?>" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="submit" name="cari" value="Cari Pengguna"
+                                            class="btn btn-secondary" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="DataPenggunaVPS.php">
+                                            <input type="button" class="btn btn-primary" value="Refresh">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-auto">
-                                    <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
-                                </div>
-                                
                             </div>
-                        </div>
+                        </form>
                         <br>
                         <table class="table table-bordered">
                             <thead>
@@ -110,22 +147,11 @@ $sqltambahan = "";
                             </thead>
                             <tbody>
                                 <?php
-                                if ($katakunci != '') {
-                                    $array_katakunci = explode(" ", $katakunci);
-                                    for ($x = 0; $x < count($array_katakunci); $x++) {
-                                        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
-                                    }
-                                    $sqltambahan = " where" . implode(" or", $sqlcari);
-                                }
-                                
-                                $sql1 = "select * from penggunavps $sqltambahan";
-                                $q1 = mysqli_query($conn, $sql1);
-                                $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $data['id']; ?>
+                                            <?php echo $nomor++; ?>
                                         </td>
                                         <td>
                                             <?php echo $data['ktp']; ?>
@@ -160,27 +186,25 @@ $sqltambahan = "";
                                 </tr>
                             </tbody>
                         </table>
-                        <nav>
+
+                        <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($halaman > 1) {
-                                        echo "href='?halaman=$previous'";
-                                    } ?>>Previous</a>
-                                </li>
                                 <?php
-                                for ($x = 1; $x <= $total_halaman; $x++) {
+                                //Pagination (awal)
+                                $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
+                                for ($i = 1; $i <= $pages; $i++) {
                                     ?>
-                                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="DataPenggunaVPS.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                    </li>
                                     <?php
                                 }
+                                //Pagination (akhir)
                                 ?>
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($halaman < $total_halaman) {
-                                        echo "href='?halaman=$next'";
-                                    } ?>>Next</a>
-                                </li>
                             </ul>
                         </nav>
+
                     </div>
                 </div>
             </div>
