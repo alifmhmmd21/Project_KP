@@ -1,2 +1,2 @@
 # Project_KP
-Tentang pembuatan Sign in untuk Web pada PT Teknologi Server Indonesia
+Tentang pembuatan tampilan Sistem Inforamsi untuk Web pada PT Teknologi Server Indonesia
