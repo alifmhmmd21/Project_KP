@@ -50,7 +50,7 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Document</title>
+    <title>Edit Data</title>
 </head>
 <body>
 <div class="login-page">
