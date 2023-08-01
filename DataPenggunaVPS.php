@@ -178,7 +178,7 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="noktp" id="noktp"
+                                    <input type="text" autocomplete="off" class="form-control" name="ktp" id="ktp"
                                         maxlength="16" required>
                                 </div>
                                 <div class="form-group">
@@ -188,12 +188,15 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nohp" id="nohp">
+                                    <input type="text" autocomplete="off" class="form-control" name="hp" id="hp">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tujuan Kunjungan</label>
-                                    <textarea name="pesan" autocomplete="off" class="form-control" id="pesan" cols="30"
-                                        rows="4"></textarea>
+                                    <label>Sub Domain</label>
+                                    <input type="text" autocomplete="off" class="form-control" name="subdomain" id="subdomain">
+                                </div>
+                                <div class="form-group">
+                                    <label>Domain</label>
+                                    <input type="text" autocomplete="off" class="form-control" name="domain" id="domain">
                                 </div>
                             </div>
                             <div class="modal-footer">
