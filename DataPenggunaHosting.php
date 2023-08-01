@@ -22,7 +22,7 @@ $nomor = $halaman_awal + 1;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Pengunjung</title>
+    <title>Data Pengguna Hosting</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -60,7 +60,7 @@ $nomor = $halaman_awal + 1;
     <div id="main">
         <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
         <div class="w3-container">
-            <h1 class="w3-center">Halo Admin</h1>
+            <h1 class="w3-center">Data Pengguna Hosting</h1>
         </div>
 
         <div class="container-fluid">
