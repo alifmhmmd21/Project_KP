@@ -39,7 +39,7 @@ $nomor = $halaman_awal + 1;
 </head>
 
 <body>
-
+    <!-- Sidebar Container -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
@@ -79,7 +79,19 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </div>
-
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-5">
+                                    <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
+                                        name="katakunci" value="" />
+                                </div>
+                                <div class="col-auto">
+                                    <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <br>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -191,11 +203,13 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>Sub Domain</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="subdomain" id="subdomain">
+                                    <input type="text" autocomplete="off" class="form-control" name="subdomain"
+                                        id="subdomain">
                                 </div>
                                 <div class="form-group">
                                     <label>Domain</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="domain" id="domain">
+                                    <input type="text" autocomplete="off" class="form-control" name="domain"
+                                        id="domain">
                                 </div>
                             </div>
                             <div class="modal-footer">
