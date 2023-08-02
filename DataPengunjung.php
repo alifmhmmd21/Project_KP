@@ -2,10 +2,7 @@
 
 <?php
 session_start();
-if ($_SESSION['admin_username'] == '') {
-    header("location:login.php");
-    exit();
-}
+
 include 'quer/config.php';
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;

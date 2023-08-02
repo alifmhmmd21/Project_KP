@@ -2,10 +2,6 @@
 
 <?php
 session_start();
-if ($_SESSION['admin_username'] == '') {
-    header("location:login.php");
-    exit();
-}
 include 'quer/config.php';
 
 /*
