@@ -144,7 +144,7 @@ $query = mysqli_query($conn, $sql1);
                                     <th class="col-md-4">Nomor HP</th>
                                     <th class="col-md-4">Subdomain</th>
                                     <th class="col-md-4">Domain</th>
-                                    <th class="col-sm-1">Aksi</th>
+                                    <th class="col-sm-1">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
