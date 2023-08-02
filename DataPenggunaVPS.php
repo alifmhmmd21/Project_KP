@@ -96,7 +96,7 @@ $query = mysqli_query($conn, $sql1);
         </div>
 
         <div class="container-fluid">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
@@ -136,10 +136,10 @@ $query = mysqli_query($conn, $sql1);
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">No</th>
-                                    <th class="col-md-3">Nomor KTP</th>
-                                    <th class="col-md-3">Nama</th>
-                                    <th class="col-md-3">Alamat</th>
-                                    <th class="col-md-3">Nomor HP</th>
+                                    <th class="col-md-4">Nomor KTP</th>
+                                    <th class="col-md-4">Nama</th>
+                                    <th class="col-md-4">Alamat</th>
+                                    <th class="col-md-4">Nomor HP</th>
                                     <th class="col-md-4">Subdomain</th>
                                     <th class="col-md-4">Domain</th>
                                     <th class="col-sm-1">Aksi</th>
