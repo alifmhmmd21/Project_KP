@@ -5,20 +5,6 @@ session_start();
 include 'quer/config.php';
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
-if (isset($_GET['op'])) {
-    $op = $_GET['op'];
-} else {
-    $op = "";
-}
-if ($op == 'delete') {
-    $id = $_GET['id'];
-    $sql1 = "delete from pengajars where id = '$id'";
-    $q1 = mysqli_query($koneksi, $sql1);
-    if ($q1) {
-        $sukses = "Berhasil hapus data";
-    }
-}
-
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
