@@ -85,7 +85,7 @@ $nomor = $halaman_awal + 1;
                                 <tr>
                                     <th class="col-md-1">No</th>
                                     <th class="col-md-1">ID</th>
-                                    <th class="col-md-4">Nama</th>
+                                    <th class="col-md-3">Nama</th>
                                     <th class="col-md-4">Email</th>
                                     <th class="col-md-4">No. HP</th>
                                     <th class="col-md-4">Alamat</th>
