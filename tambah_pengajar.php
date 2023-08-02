@@ -1,4 +1,3 @@
-<!-- Insert Database -->
 <?php
     require 'quer/config.php';
 
