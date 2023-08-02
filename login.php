@@ -5,8 +5,8 @@ include("quer/config.php");
 
 session_start();
 if (isset($_SESSION['id']) != '') {
-    header("location:DataPenggunaVPS.php");
-    exit();
+	header("location:DataPenggunaVPS.php");
+	exit();
 }
 ?>
 <!--Uji Coba Finish-->
@@ -32,6 +32,7 @@ if (isset($_SESSION['id']) != '') {
 				<div class="col-md-6 text-center mb-5">
 				</div>
 			</div>
+			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
@@ -47,7 +48,7 @@ if (isset($_SESSION['id']) != '') {
 							<div class="input-group flex-nowrap">
 								<span class="input-group-text" id="addon-wrapping">@</span>
 								<input type="text" class="form-control" placeholder="Username" aria-label="Username"
-									aria-describedby="addon-wrapping" name="user" id="user" value="<?php echo $username ?>">
+									aria-describedby="addon-wrapping" name="user" id="user">
 							</div>
 							<br>
 							<div class="input-group flex-nowrap">

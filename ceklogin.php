@@ -11,11 +11,9 @@ $pass		= mysqli_escape_string($conn,$pass);
 $proses 	= "SELECT * FROM admin WHERE username ='$user' AND password ='$pass'";
 $login		= mysqli_query($conn, $proses);
 $cek		= mysqli_num_rows($login);
-	
 
 if ($cek > 0) {
-	
-	$data 			= mysqli_fetch_assoc($login);
+	$data 		= mysqli_fetch_assoc($login);	
 	$db_id			= $data['id'];
 	$db_user		= $data['username'];
 	$db_pass		= $data['password'];
