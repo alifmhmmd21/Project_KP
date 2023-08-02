@@ -84,7 +84,6 @@ $nomor = $halaman_awal + 1;
                             <thead>
                                 <tr>
                                     <th class="col-md-1">No</th>
-                                    <th class="col-md-1">ID</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-4">Email</th>
                                     <th class="col-md-4">No. HP</th>
@@ -100,9 +99,6 @@ $nomor = $halaman_awal + 1;
                                     <tr>
                                     <td>
                                         <?php echo $nomor++ ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data['id'] ?>
                                         </td>
                                         <td>
                                             <?php echo $data['name'] ?>
