@@ -6,7 +6,7 @@
             $alamat     = $_POST['alamat'];
             $hp         = $_POST['hp'];
             $subdomain  = $_POST['subdomain'];
-            $domain  = $_POST['domain'];
+            $domain     = $_POST['domain'];
 
             $akhir = "INSERT INTO penggunavps (ktp,nama,alamat,hp,subdomain,domain) VALUES('$ktp','$nama','$alamat','$hp','$subdomain','$domain')";
 
