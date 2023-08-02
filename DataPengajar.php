@@ -4,19 +4,6 @@
 session_start();
 
 include 'quer/config.php';
-
-$katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
-$sqltambahan = "";
-$per_halaman = 5;
-
-if ($katakunci != '') {
-    $array_katakunci = explode(" ", $katakunci);
-    for ($x = 0; $x < count($array_katakunci); $x++) {
-        $sqlcari[] = "(name like '%" . $array_katakunci[$x] . "%' or email like '%" . $array_katakunci[$x] . "%' or phone like '%" . $array_katakunci[$x] . "%')";
-    }
-    $sqltambahan = " where" . implode(" or", $sqlcari);
-}
-
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
@@ -94,25 +81,6 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </div>
-                        <form>
-                            <div class="container text-center">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <input type="text" class="form-control" placeholder="Nama / Email / No HP"
-                                            name="katakunci" value="<?php echo $katakunci ?>" />
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengajar"
-                                            class="btn btn-secondary" />
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href="DataPengajar.php">
-                                            <input type="button" class="btn btn-primary" value="Refresh">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
 
                         <table class="table table-bordered">
                             <thead>
@@ -172,21 +140,15 @@ $nomor = $halaman_awal + 1;
                                     } ?>>Previous</a>
                                 </li>
                                 <?php
-                                //Pagination (awal)
-                                $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
-                                for ($i = 1; $i <= $pages; $i++) {
+                                for ($x = 1; $x <= $total_halaman; $x++) {
                                     ?>
-                                    <li class="page-item">
-                                        <a class="page-link"
-                                            href="DataPengajar.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
-                                    </li>
+                                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
                                     <?php
                                 }
-                                //Pagination (akhir)
                                 ?>
                                 <li class="page-item">
-                                    <a class="page-link" <?php if ($page < $pages) {
-                                        echo "href='?page=$next'";
+                                    <a class="page-link" <?php if ($halaman < $total_halaman) {
+                                        echo "href='?halaman=$next'";
                                     } ?>>Next</a>
                                 </li>
                             </ul>
