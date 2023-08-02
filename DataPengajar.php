@@ -89,7 +89,7 @@ $nomor = $halaman_awal + 1;
                                     <th class="col-md-3">No. HP</th>
                                     <th class="col-md-3">Alamat</th>
                                     <th class="col-md-3">Materi</th>
-                                    <th class="col-sm-1">Action </th>
+                                    <th class="col-sm-3">Action </th>
                                 </tr>
                             </thead>
                             <tbody>
