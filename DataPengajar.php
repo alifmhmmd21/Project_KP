@@ -106,13 +106,14 @@ $nomor = $halaman_awal + 1;
                                             class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
-                                        <a href="DataPenggunaVPS.php">
+                                        <a href="DataPengajar.php">
                                             <input type="button" class="btn btn-primary" value="Refresh">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </form>
+                        
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
