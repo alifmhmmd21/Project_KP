@@ -100,6 +100,7 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </form>
+                        <br>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
