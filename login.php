@@ -1,4 +1,3 @@
-<!doctype html>
 <?php
 ?>
 <!--Uji Coba Start-->
@@ -41,19 +40,13 @@ if (isset($_POST['Login'])) {
             $_SESSION['admin_username'] = $username;
             header("location:DataPengunjung.php");
             exit();
-        }
+		}
     }
 }
 ?>
 <!--Uji Coba Finish-->
 
-
-
-
-
-
-
-
+<!doctype html>
 <html lang="en">
 
 <head>
