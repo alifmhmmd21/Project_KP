@@ -90,7 +90,7 @@ $nomor = $halaman_awal + 1;
                                         value="<?php echo $katakunci ?>" />
                                     </div>
                                     <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
+                                        <input type="submit" name="cari" value="Cari Pengajar" class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
                                         <a href="DataPengajar.php">

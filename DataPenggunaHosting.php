@@ -3,6 +3,7 @@
 <?php
 session_start();
 include 'quer/config.php';
+$katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
@@ -80,7 +81,24 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </div>
-
+                        <form>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
+                                        value="<?php echo $katakunci ?>" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="DataPenggunaHosting.php">
+                                            <input type="button" class="btn btn-primary" value="Refresh">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -95,6 +113,20 @@ $nomor = $halaman_awal + 1;
                             </thead>
                             <tbody>
                                 <?php
+                                //keyword search
+                                $sqltambahan = "";
+                                if ($katakunci != '') {
+                                    $array_katakunci = explode(" ", $katakunci);
+                                    for ($x = 0; $x < count($array_katakunci); $x++) {
+                                        $sqlcari[] = "(no_ktp like '%" . $array_katakunci[$x] . "%' or nama like '%" . $array_katakunci[$x] . "%' or no_hp like '%" . $array_katakunci[$x] . "%')";
+                                    }
+                                    $sqltambahan = " where" . implode(" or", $sqlcari);
+                                }
+                                $sql1 = "select * from visiter $sqltambahan";
+                                $q1 = mysqli_query($conn, $sql1);
+                                $total = mysqli_num_rows($q1);
+                                $sql1 = $sql1 . " order by id desc limit $halaman_awal,$batas";
+                                $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
