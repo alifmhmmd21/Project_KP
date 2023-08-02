@@ -124,7 +124,11 @@ $nomor = $halaman_awal + 1;
                                     }
                                     $sqltambahan = " where" . implode(" or", $sqlcari);
                                 }
-
+                                $sql1 = "select * from pengajars $sqltambahan";
+                                $q1 = mysqli_query($conn, $sql1);
+                                $total = mysqli_num_rows($q1);
+                                $sql1 = $sql1 . " order by id desc limit $halaman_awal,$batas";
+                                $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
