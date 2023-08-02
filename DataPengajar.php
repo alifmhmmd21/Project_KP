@@ -85,7 +85,7 @@ $nomor = $halaman_awal + 1;
                         <form>
                             <div class="container text-center">
                                 <div class="row">
-                                    <div class="col-auto">
+                                    <div class="col-5">
                                         <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
                                         value="<?php echo $katakunci ?>" />
                                     </div>
