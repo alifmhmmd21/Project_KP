@@ -83,12 +83,13 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">Nama</th>
-                                    <th class="col-md-3">Email</th>
-                                    <th class="col-md-3">No. HP</th>
-                                    <th class="col-md-3">Alamat</th>
-                                    <th class="col-md-3">Materi</th>
-                                    <th class="col-sm-1"> </th>
+                                    <th class="col-md-1">No</th>
+                                    <th class="col-md-3">Nama</th>
+                                    <th class="col-md-4">Email</th>
+                                    <th class="col-md-4">No. HP</th>
+                                    <th class="col-md-4">Alamat</th>
+                                    <th class="col-md-2">Materi</th>
+                                    <th class="col-sm-3">Action </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,22 +97,23 @@ $nomor = $halaman_awal + 1;
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
-                                        <td>
-                                            <?php echo $data['id']; ?>
+                                    <td>
+                                        <?php echo $nomor++ ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['name']; ?>
+                                            <?php echo $data['name'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['email']; ?>
+                                            <?php echo $data['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['phone']; ?>
+                                            <?php echo $data['phone'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['address']; ?>
+                                            <?php echo $data['address'] ?>
                                         </td>
-                                            <?php echo $data['materi']; ?>
+                                        <td>
+                                            <?php echo $data['materi'] ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
