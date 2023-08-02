@@ -107,7 +107,7 @@ if (isset($_POST['Login'])) {
 							<div class="input-group flex-nowrap">
 								<span class="input-group-text" id="addon-wrapping">@</span>
 								<input type="text" class="form-control" placeholder="Username" aria-label="Username"
-									aria-describedby="addon-wrapping" name="user" id="username" value="<?php echo $username ?>">
+									aria-describedby="addon-wrapping" name="username" id="username" value="<?php echo $username ?>">
 							</div>
 							<br>
 							<div class="input-group flex-nowrap">
