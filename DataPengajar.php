@@ -83,6 +83,7 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th class="col-md-2">No</th>
                                     <th class="col-md-2">ID</th>
                                     <th class="col-md-2">Nama</th>
                                     <th class="col-md-3">Email</th>
