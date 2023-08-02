@@ -10,7 +10,6 @@ $pass		= mysqli_escape_string($conn,$pass);
 
 $proses 	= "SELECT * FROM admin WHERE username ='$user' AND password ='$pass'";
 $login		= mysqli_query($conn, $proses);
-
 $cek		= mysqli_num_rows($login);
 	
 
