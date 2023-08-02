@@ -83,7 +83,7 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">Nomor</th>
+                                    <th class="col-md-2">No</th>
                                     <th class="col-md-3">Nomor KTP</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>
@@ -98,7 +98,7 @@ $nomor = $halaman_awal + 1;
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $data['id']; ?>
+                                            <?php echo $nomor++ ?>
                                         </td>
                                         <td>
                                             <?php echo $data['no_ktp']; ?>
