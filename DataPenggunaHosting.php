@@ -156,7 +156,7 @@ $nomor = $halaman_awal + 1;
             </div>
 
             <!-- Untuk Tampilan Add -->
-            <!-- Edit Modal HTML -->
+            <!-- Add Modal HTML -->
             <div id="tambah-teks" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
