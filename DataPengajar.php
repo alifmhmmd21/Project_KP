@@ -99,13 +99,12 @@ $nomor = $halaman_awal + 1;
                         <form>
                             <div class="container text-center">
                                 <div class="row">
-                                    <div class="col-5">
-                                        <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
-                                            name="katakunci" value="<?php echo $katakunci ?>" />
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
+                                        value="<?php echo $katakunci ?>" />
                                     </div>
                                     <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengguna"
-                                            class="btn btn-secondary" />
+                                        <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
                                         <a href="DataPengajar.php">
