@@ -132,10 +132,10 @@ $query = mysqli_query($conn, $sql1);
                             </div>
                         </form>
                         <br>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th class="col-auto">ID</th>
+                                    <th class="col-sm-1">No</th>
                                     <th class="col-md-3">Nomor KTP</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>

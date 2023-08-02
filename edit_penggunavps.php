@@ -65,11 +65,11 @@ if (isset($_POST['simpan'])) {
                     <div class="modal-body">
                         <div class="form-group">
                             <label>No KTP</label>
-                            <input type="text" class="form-control" id="ktp" value=" <?php echo $ktp?>" name="noktp">
+                            <input type="number" class="form-control" id="ktp" value="<?php echo $ktp?>" name="noktp" maxlength="16" required>
                         </div>
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="nama" value=" <?php echo $nama?>" name="nama">
+                            <input type="text" class="form-control" id="nama" value="<?php echo $nama?>" name="nama" required>
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
@@ -77,15 +77,15 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="text" class="form-control" id="hp" value=" <?php echo $hp?>" name="nohp">
+                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp?>" name="nohp">
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>
-                            <input type="text" class="form-control" id="subdomain" value=" <?php echo $subdomain ?>" name="subdomain">
+                            <input type="text" class="form-control" id="subdomain" value="<?php echo $subdomain ?>" name="subdomain">
                         </div>
                         <div class="form-group">
                             <label>Domain</label>
-                            <input type="text" class="form-control" id="domain" value=" <?php echo $domain ?>" name="domain">
+                            <input type="text" class="form-control" id="domain" value="<?php echo $domain ?>" name="domain">
                         </div>
                     </div>
                     <div class="modal-footer">
