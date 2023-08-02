@@ -1,6 +1,7 @@
 <!-- Insert Database -->
 <?php
     require 'quer/config.php';
+            
             $nama      = $_POST['nama'];
             $email     = $_POST['email'];
             $phone     = $_POST['phone'];
