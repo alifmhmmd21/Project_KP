@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if (isset($_SESSION['id']) != '') {
+    header("location:DataPengunjung.php");
+    exit();
+}
 include 'quer/config.php';
 
 $user		= stripcslashes($_POST['user']);
