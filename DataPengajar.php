@@ -2,8 +2,17 @@
 
 <?php
 session_start();
-
 include 'quer/config.php';
+
+$sqltambahan = "";
+if ($katakunci != '') {
+    $array_katakunci = explode(" ", $katakunci);
+    for ($x = 0; $x < count($array_katakunci); $x++) {
+        $sqlcari[] = "(name like '%" . $array_katakunci[$x] . "%' or email like '%" . $array_katakunci[$x] . "%' or phone like '%" . $array_katakunci[$x] . "%')";
+        }
+        $sqltambahan = " where" . implode(" or", $sqlcari);
+}
+
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
@@ -81,7 +90,26 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </div>
-
+                        <form>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" placeholder="Nama / KTP / No HP"
+                                            name="katakunci" value="<?php echo $katakunci ?>" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="submit" name="cari" value="Cari Pengguna"
+                                            class="btn btn-secondary" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="DataPengajar.php">
+                                            <input type="button" class="btn btn-primary" value="Refresh">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
