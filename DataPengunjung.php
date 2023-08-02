@@ -112,7 +112,7 @@ $nomor = $halaman_awal + 1;
                                         <td>
                                             <?php echo $data['no_hp']; ?>
                                         </td>
-                                        <td style="overflow: hidden">
+                                        <td style="overflow: auto">
                                             <?php echo $data['tujuan']; ?>
                                         </td>
                                         <td>
