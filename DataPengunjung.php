@@ -50,7 +50,7 @@ $nomor = $halaman_awal + 1;
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="#" class="w3-bar-item w3-button">Data Pengunjung</a>
-        <a href="#" class="w3-bar-item w3-button">Data Pengajar</a>
+        <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
         <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="logout.php">
             <i class="fa fa-power-off fa-lg">
                 <h7>
