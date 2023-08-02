@@ -88,7 +88,7 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">No</th>
+                                    <th class="col-md-1">No</th>
                                     <th class="col-md-3">Nomor KTP</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>
