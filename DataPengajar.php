@@ -100,7 +100,7 @@ $nomor = $halaman_awal + 1;
                                             <?php echo $data['id']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['nama']; ?>
+                                            <?php echo $data['name']; ?>
                                         </td>
                                         <td>
                                             <?php echo $data['email']; ?>
@@ -109,7 +109,7 @@ $nomor = $halaman_awal + 1;
                                             <?php echo $data['phone']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['alamat']; ?>
+                                            <?php echo $data['address']; ?>
                                         </td>
                                             <?php echo $data['materi']; ?>
                                         </td>
@@ -168,7 +168,7 @@ $nomor = $halaman_awal + 1;
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama">
+                                    <input type="text" autocomplete="off" class="form-control" name="name" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
@@ -182,7 +182,7 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="alamat" id="alamat">
+                                    <input type="text" autocomplete="off" class="form-control" name="address" id="address">
                                 </div>
                                 <div class="form-group">
                                     <label>Materi</label>
