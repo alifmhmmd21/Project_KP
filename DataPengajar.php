@@ -101,22 +101,22 @@ $nomor = $halaman_awal + 1;
                                         <?php echo $nomor++ ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['id'] ?>
+                                            <?php echo $data['id'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['name'] ?>
+                                            <?php echo $data['name'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['email'] ?>
+                                            <?php echo $data['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['phone'] ?>
+                                            <?php echo $data['phone'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['address'] ?>
+                                            <?php echo $data['address'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $r1['materi'] ?>
+                                            <?php echo $data['materi'] ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
