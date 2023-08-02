@@ -2,13 +2,13 @@
 <?php
     require 'quer/config.php';
 
-            $nama      = $_POST['nama'];
+            $name      = $_POST['name'];
             $email     = $_POST['email'];
             $phone     = $_POST['phone'];
-            $alamat    = $_POST['alamat'];
+            $address    = $_POST['address'];
             $materi    = $_POST['materi'];
 
-            $akhir = "INSERT INTO pengajars (nama,email,phone,alamat,materi) VALUES('$nama','$email','$phone','$alamat','$materi')";
+            $akhir = "INSERT INTO pengajars (name,email,phone,address,materi) VALUES('$name','$email','$phone','$address','$materi')";
 
             $query = mysqli_query($conn,$akhir);
             if($query){
