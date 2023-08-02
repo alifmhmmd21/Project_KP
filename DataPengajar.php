@@ -97,22 +97,26 @@ $nomor = $halaman_awal + 1;
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
-                                        <td>
-                                            <?php echo $data['id']; ?>
+                                    <td>
+                                        <?php echo $nomor++ ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['name']; ?>
+                                            <?php echo $r1['id'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['email']; ?>
+                                            <?php echo $r1['name'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['phone']; ?>
+                                            <?php echo $r1['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['address']; ?>
+                                            <?php echo $r1['phone'] ?>
                                         </td>
-                                            <?php echo $data['materi']; ?>
+                                        <td>
+                                            <?php echo $r1['address'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $r1['materi'] ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
