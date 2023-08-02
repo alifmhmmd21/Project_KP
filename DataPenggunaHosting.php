@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
+if ($_SESSION['id'] == '') {
+    header("location:login.php");
+    exit();
+}
 include 'quer/config.php';
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
