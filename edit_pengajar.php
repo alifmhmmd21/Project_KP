@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
 }
 
 if($id != ""){
-    $sql1       = "select * from pengajar where id='$id'";
+    $sql1       = "select * from pengajars where id='$id'";
     $q1         = mysqli_query($conn,$sql1);
     $r1         = mysqli_fetch_array($q1);
     $nama       = $r1['nama'];
@@ -29,7 +29,7 @@ if (isset($_POST['simpan'])) {
 
     if (empty($error)) {
         if($id != ""){
-            $sql1 = "update pengajar set nama ='$nama',email = '$email',phone = '$phone', alamat = '$alamat', materi='$materi', where id = '$id'";
+            $sql1 = "update pengajars set nama ='$nama',email = '$email',phone = '$phone', alamat = '$alamat', materi='$materi', where id = '$id'";
         }
         $q1       = mysqli_query($conn,$sql1);
         if ($q1) {
