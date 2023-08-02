@@ -176,7 +176,7 @@ $query = mysqli_query($conn, $sql1);
                                                 href="edit_penggunavps.php?id=<?php echo $data['id'] ?>"><i
                                                     class='material-icons'>&#xE254;</i></a>
                                             <a class='delete' title='Delete' data-toggle='tooltip'
-                                                href="delete.php?id=<?php echo $data['id']; ?>"
+                                                href="deletePenggunaVps.php?id=<?php echo $data['id']; ?>"
                                                 onclick="return confirm('Apakah Yakin Hapus Data ?')"><i
                                                     class='material-icons'>&#xE872;</i></a>
                                         </td>
