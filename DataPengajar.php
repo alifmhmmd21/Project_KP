@@ -113,7 +113,7 @@ $nomor = $halaman_awal + 1;
                                 </div>
                             </div>
                         </form>
-                        
+
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -172,15 +172,21 @@ $nomor = $halaman_awal + 1;
                                     } ?>>Previous</a>
                                 </li>
                                 <?php
-                                for ($x = 1; $x <= $total_halaman; $x++) {
+                                //Pagination (awal)
+                                $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
+                                for ($i = 1; $i <= $pages; $i++) {
                                     ?>
-                                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="DataPengajar.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                    </li>
                                     <?php
                                 }
+                                //Pagination (akhir)
                                 ?>
                                 <li class="page-item">
-                                    <a class="page-link" <?php if ($halaman < $total_halaman) {
-                                        echo "href='?halaman=$next'";
+                                    <a class="page-link" <?php if ($page < $pages) {
+                                        echo "href='?page=$next'";
                                     } ?>>Next</a>
                                 </li>
                             </ul>
