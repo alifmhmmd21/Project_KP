@@ -50,7 +50,7 @@ $nomor = $halaman_awal + 1;
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="#" class="w3-bar-item w3-button">Data Pengunjung</a>
-        <a href="#" class="w3-bar-item w3-button">Data Pengajar</a>
+        <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
         <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="logout.php">
             <i class="fa fa-power-off fa-lg">
                 <h7>
@@ -88,7 +88,7 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">Nomor</th>
+                                    <th class="col-md-1">No</th>
                                     <th class="col-md-3">Nomor KTP</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>
@@ -103,7 +103,7 @@ $nomor = $halaman_awal + 1;
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $data['id']; ?>
+                                            <?php echo $nomor++ ?>
                                         </td>
                                         <td>
                                             <?php echo $data['no_ktp']; ?>
@@ -117,7 +117,7 @@ $nomor = $halaman_awal + 1;
                                         <td>
                                             <?php echo $data['no_hp']; ?>
                                         </td>
-                                        <td style="overflow: hidden">
+                                        <td style="overflow: auto">
                                             <?php echo $data['tujuan']; ?>
                                         </td>
                                         <td>
