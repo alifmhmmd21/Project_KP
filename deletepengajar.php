@@ -1,7 +1,7 @@
 <?php 
 include_once "quer/config.php";
 $id=$_GET['id'];
-$sql = "DELETE FROM pengajar WHERE id = '$id'";
+$sql = "DELETE FROM pengajars WHERE id = '$id'";
 $query = mysqli_query($conn,$sql);
 if($query)
 {

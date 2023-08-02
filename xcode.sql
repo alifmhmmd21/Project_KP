@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Agu 2023 pada 09.41
+-- Waktu pembuatan: 02 Agu 2023 pada 05.21
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -39,6 +39,55 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengajar`
+--
+
+CREATE TABLE `pengajar` (
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` bigint(50) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `materi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pengajar`
+--
+
+INSERT INTO `pengajar` (`nama`, `email`, `phone`, `alamat`, `materi`) VALUES
+('Raven Fajar Febriano', 'Ravenfajar@gmail.com', 89999764513, 'Jl. salatiga no 54B RT/RW 09/08 Pasar Baru Tembalang Salatiga', 'Back End');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengajars`
+--
+
+CREATE TABLE `pengajars` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `phone` int(20) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `materi` varchar(20) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pengajars`
+--
+
+INSERT INTO `pengajars` (`id`, `name`, `email`, `phone`, `address`, `materi`, `created_at`) VALUES
+(5, 'raven', 'raven@gmail.com', 843575272, 'salatiga', 'php', '2023-07-17 09:47:52'),
+(6, 'faiz', 'faiz@gmail.com', 123456, 'Semarang', 'designer', '2023-07-17 11:25:46'),
+(11, 'raven', 'bujeliah@gmail.com', 856738547, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Front end', '2023-07-20 12:51:05'),
+(25, 'kakai', 'muhammadkaisan3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-23 01:56:08'),
+(29, 'Rizky', 'Dhiyarizqi3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Jaringan nirkabel', '2023-07-28 13:25:54'),
+(31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18');
 
 -- --------------------------------------------------------
 
@@ -90,7 +139,8 @@ INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALU
 (23, 213124214, ' Bujel', 'asdafasfasd', 123123123, 'iyaa bang'),
 (24, 312312312, ' Faiz', 'sadasdasdqw', 12512, 'dasdasdas adsdasdsa'),
 (25, 123123142, ' Raven', 'sdqdwqdq', 31323123, 'dasdwqddqdqw iyalah'),
-(26, 41213123, '  Halo', 'dafwefwev', 213412321, 'tujuan kami berkunjung untuk mengikat tali silaturahim');
+(26, 41213123, '  Halo', 'dafwefwev', 213412321, 'tujuan kami berkunjung untuk mengikat tali silaturahim'),
+(28, 0, 'Raven Fajar Febriano', 'Jl. salatiga no 54 rt rw 04 06 salatiga', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -101,6 +151,13 @@ INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALU
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pengajars`
+--
+ALTER TABLE `pengajars`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indeks untuk tabel `penggunavps`
@@ -126,6 +183,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `pengajars`
+--
+ALTER TABLE `pengajars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT untuk tabel `penggunavps`
 --
 ALTER TABLE `penggunavps`
@@ -135,7 +198,7 @@ ALTER TABLE `penggunavps`
 -- AUTO_INCREMENT untuk tabel `visiter`
 --
 ALTER TABLE `visiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

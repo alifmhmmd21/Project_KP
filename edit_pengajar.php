@@ -9,27 +9,27 @@ if(isset($_GET['id'])){
 }
 
 if($id != ""){
-    $sql1       = "select * from pengajar where id='$id'";
+    $sql1       = "select * from pengajars where id='$id'";
     $q1         = mysqli_query($conn,$sql1);
     $r1         = mysqli_fetch_array($q1);
-    $nama       = $r1['nama'];
+    $name       = $r1['name'];
     $email      = $r1['email'];
     $phone      = $r1['phone'];
-    $alamat     = $r1['alamat'];
+    $address    = $r1['address'];
     $materi     = $r1['materi'];
     
 }
 
 if (isset($_POST['simpan'])) {
-    $nama       = $_POST['nama'];
+    $name       = $_POST['name'];
     $email      = $_POST['email'];
     $phone      = $_POST['phone'];
-    $alamat     = $_POST['alamat'];
+    $address    = $_POST['address'];
     $materi     = $_POST['materi'];
 
     if (empty($error)) {
         if($id != ""){
-            $sql1 = "update pengajar set nama ='$nama',email = '$email',phone = '$phone', alamat = '$alamat', materi='$materi', where id = '$id'";
+            $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi', where id = '$id'";
         }
         $q1       = mysqli_query($conn,$sql1);
         if ($q1) {
@@ -63,7 +63,7 @@ if (isset($_POST['simpan'])) {
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="nama" value=" <?php echo $nama?>" name="nama">
+                            <input type="text" class="form-control" id="name" value=" <?php echo $name?>" name="name">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -75,7 +75,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" id="alamat" value=" <?php echo $alamat?>" name="alamat">
+                            <input type="text" class="form-control" id="address" value=" <?php echo $address?>" name="address">
                         </div>
                         <div class="form-group">
                             <label>Materi</label>

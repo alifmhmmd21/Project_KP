@@ -8,11 +8,11 @@ $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
 $previous = $halaman - 1;
 $next = $halaman + 1;
 
-$data = mysqli_query($conn, "select * from pengajar");
+$data = mysqli_query($conn, "select * from pengajars");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 
-$query = mysqli_query($conn, "select * from pengajar limit $halaman_awal, $batas");
+$query = mysqli_query($conn, "select * from pengajars limit $halaman_awal, $batas");
 $nomor = $halaman_awal + 1;
 
 ?>
@@ -83,12 +83,14 @@ $nomor = $halaman_awal + 1;
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">Nama</th>
-                                    <th class="col-md-3">Email</th>
-                                    <th class="col-md-3">No. HP</th>
-                                    <th class="col-md-3">Alamat</th>
-                                    <th class="col-md-3">Materi</th>
-                                    <th class="col-sm-1"> </th>
+                                    <th class="col-md-1">No</th>
+                                    <th class="col-md-1">ID</th>
+                                    <th class="col-md-3">Nama</th>
+                                    <th class="col-md-4">Email</th>
+                                    <th class="col-md-4">No. HP</th>
+                                    <th class="col-md-4">Alamat</th>
+                                    <th class="col-md-2">Materi</th>
+                                    <th class="col-sm-3">Action </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,22 +98,26 @@ $nomor = $halaman_awal + 1;
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
-                                        <td>
-                                            <?php echo $data['id']; ?>
+                                    <td>
+                                        <?php echo $nomor++ ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['nama']; ?>
+                                            <?php echo $data['id'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['email']; ?>
+                                            <?php echo $data['name'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['phone']; ?>
+                                            <?php echo $data['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['alamat']; ?>
+                                            <?php echo $data['phone'] ?>
                                         </td>
-                                            <?php echo $data['materi']; ?>
+                                        <td>
+                                            <?php echo $data['address'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['materi'] ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
@@ -168,7 +174,7 @@ $nomor = $halaman_awal + 1;
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama">
+                                    <input type="text" autocomplete="off" class="form-control" name="name" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
@@ -182,7 +188,7 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="alamat" id="alamat">
+                                    <input type="text" autocomplete="off" class="form-control" name="address" id="address">
                                 </div>
                                 <div class="form-group">
                                     <label>Materi</label>
