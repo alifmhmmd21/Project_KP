@@ -135,7 +135,7 @@ $query = mysqli_query($conn, $sql1);
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="col-md-2">ID</th>
+                                    <th class="col-auto">ID</th>
                                     <th class="col-md-3">Nomor KTP</th>
                                     <th class="col-md-3">Nama</th>
                                     <th class="col-md-3">Alamat</th>
@@ -163,7 +163,7 @@ $query = mysqli_query($conn, $sql1);
                                             <?php echo $data['alamat']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['hp']; ?>
+                                            <?php echo '+62'. $data  ['hp']; ?>
                                         </td>
                                         <td>
                                             <?php echo $data['subdomain']; ?>
