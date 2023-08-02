@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
+if ($_SESSION['id'] == '') {
+    header("location:login.php");
+    exit();
+}
 include 'quer/config.php';
 $batas = 5;
 $halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
@@ -40,7 +45,7 @@ $nomor = $halaman_awal + 1;
 
 <body>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -112,7 +117,7 @@ $nomor = $halaman_awal + 1;
                                         <td>
                                             <?php echo $data['no_hp']; ?>
                                         </td>
-                                        <td style="overflow: hidden">
+                                        <td style="overflow: auto">
                                             <?php echo $data['tujuan']; ?>
                                         </td>
                                         <td>
@@ -217,7 +222,7 @@ $nomor = $halaman_awal + 1;
             document.getElementById("openNav").style.display = "inline-block";
         }
     </script>
-    <!-- <script src="js/tujuan.js"></script>                         -->
+
 </body>
 
 </html>
