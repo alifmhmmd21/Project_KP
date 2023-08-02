@@ -1,6 +1,4 @@
 <!doctype html>
-<?php
-?>
 <!--Uji Coba Start-->
 <?php
 include("quer/config.php");

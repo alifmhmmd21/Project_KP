@@ -24,5 +24,4 @@ if ($cek > 0) {
 }else{
 	echo "<script>alert('LOGIN GAGAL');document.location.href='login.php'</script>";
 }
-
 ?>
