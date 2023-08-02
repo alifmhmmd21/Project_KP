@@ -4,13 +4,19 @@
 session_start();
 include 'quer/config.php';
 
-$sqltambahan = "";
-if ($katakunci != '') {
-    $array_katakunci = explode(" ", $katakunci);
-    for ($x = 0; $x < count($array_katakunci); $x++) {
-        $sqlcari[] = "(name like '%" . $array_katakunci[$x] . "%' or email like '%" . $array_katakunci[$x] . "%' or phone like '%" . $array_katakunci[$x] . "%')";
-        }
-        $sqltambahan = " where" . implode(" or", $sqlcari);
+$katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
+if (isset($_GET['op'])) {
+    $op = $_GET['op'];
+} else {
+    $op = "";
+}
+if ($op == 'delete') {
+    $id = $_GET['id'];
+    $sql1 = "delete from pengajars where id = '$id'";
+    $q1 = mysqli_query($koneksi, $sql1);
+    if ($q1) {
+        $sukses = "Berhasil hapus data";
+    }
 }
 
 $batas = 5;
@@ -124,6 +130,16 @@ $nomor = $halaman_awal + 1;
                             </thead>
                             <tbody>
                                 <?php
+                                //keyword search
+                                $sqltambahan = "";
+                                if ($katakunci != '') {
+                                    $array_katakunci = explode(" ", $katakunci);
+                                    for ($x = 0; $x < count($array_katakunci); $x++) {
+                                        $sqlcari[] = "(name like '%" . $array_katakunci[$x] . "%' or email like '%" . $array_katakunci[$x] . "%' or phone like '%" . $array_katakunci[$x] . "%')";
+                                    }
+                                    $sqltambahan = " where" . implode(" or", $sqlcari);
+                                }
+
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
