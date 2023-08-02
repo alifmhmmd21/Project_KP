@@ -22,7 +22,7 @@ $nomor = $halaman_awal + 1;
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
-$per_halaman = 3;
+$per_halaman = 5;
 
 if ($katakunci != '') {
     $array_katakunci = explode(" ", $katakunci);
@@ -42,7 +42,8 @@ $pages = ceil($total / $per_halaman);
 $nomor = $mulai + 1;
 $sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
 //
-
+$previous = $page - 1;
+$next = $page + 1;
 
 $query = mysqli_query($conn, $sql1);
 
@@ -105,7 +106,7 @@ $query = mysqli_query($conn, $sql1);
                                     <h2><b>Data Pengguna VPS</b></h2>
                                 </div>
                                 <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
+                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
                                         style="float: right;"><i class="material-icons">&#xE147;</i>
                                         <span>Tambah</span></a>
                                 </div>
@@ -189,6 +190,11 @@ $query = mysqli_query($conn, $sql1);
 
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" <?php if ($page > 1) {
+                                        echo "href='?page=$previous'";
+                                    } ?>>Previous</a>
+                                </li>
                                 <?php
                                 //Pagination (awal)
                                 $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
@@ -202,6 +208,11 @@ $query = mysqli_query($conn, $sql1);
                                 }
                                 //Pagination (akhir)
                                 ?>
+                                <li class="page-item">
+                                    <a class="page-link" <?php if ($page < $pages) {
+                                        echo "href='?page=$next'";
+                                    } ?>>Next</a>
+                                </li>
                             </ul>
                         </nav>
 
@@ -223,7 +234,7 @@ $query = mysqli_query($conn, $sql1);
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama">
+                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
@@ -233,21 +244,20 @@ $query = mysqli_query($conn, $sql1);
                                 <div class="form-group">
                                     <label>Alamat</label>
                                     <input type="text" autocomplete="off" class="form-control" name="alamat"
-                                        id="alamat">
+                                        id="alamat" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="hp" id="hp">
+                                    <input type="text" autocomplete="off" class="form-control" name="hp" id="hp" maxlength="12" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Sub Domain</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="subdomain"
-                                        id="subdomain">
+                                    <input type="text" autocomplete="off" class="form-control" name="subdomain" id="subdomain" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Domain</label>
                                     <input type="text" autocomplete="off" class="form-control" name="domain"
-                                        id="domain">
+                                        id="domain" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
