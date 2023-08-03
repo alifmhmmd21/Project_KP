@@ -43,7 +43,7 @@ $nomor = $halaman_awal + 1;
 
 <body>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%;" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; width:18%;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -196,7 +196,7 @@ $nomor = $halaman_awal + 1;
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
-                            action="tambah_admin.php">
+                            action="tambah_pengunjung_admin.php">
                             <div class="modal-header">
                                 <h4 class="modal-title">Tambah Tujuan Kunjungan</h4>
                                 <button type="button" class="close" data-dismiss="modal"

@@ -42,7 +42,7 @@ $nomor = $halaman_awal + 1;
 
 <body>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%; " id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; width:18%; " id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="#" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
