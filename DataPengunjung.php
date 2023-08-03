@@ -86,11 +86,12 @@ $nomor = $halaman_awal + 1;
                             <div class="container text-center">
                                 <div class="row">
                                     <div class="col-5">
-                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
-                                        value="<?php echo $katakunci ?>" />
+                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci"
+                                            name="katakunci" value="<?php echo $katakunci ?>" />
                                     </div>
                                     <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengguna" class="btn btn-secondary" />
+                                        <input type="submit" name="cari" value="Cari Pengguna"
+                                            class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
                                         <a href="DataPengunjung.php">
@@ -114,7 +115,7 @@ $nomor = $halaman_awal + 1;
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
+                                <?php
                                 //keyword search
                                 $sqltambahan = "";
                                 if ($katakunci != '') {
@@ -130,7 +131,7 @@ $nomor = $halaman_awal + 1;
                                 $sql1 = $sql1 . " order by id desc limit $halaman_awal,$batas";
                                 $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
-                            ?>
+                                    ?>
                                     <tr>
                                         <td>
                                             <?php echo $nomor++ ?>
