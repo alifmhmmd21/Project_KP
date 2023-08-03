@@ -272,3 +272,8 @@ table.table td .add {
         width: auto;
     }
 }
+td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
