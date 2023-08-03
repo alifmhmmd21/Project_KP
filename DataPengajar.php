@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <?php
-session_start();
-include 'quer/config.php';
+include ('quer/config.php');
+include("incl/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $batas = 5;
