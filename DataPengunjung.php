@@ -152,7 +152,7 @@ $nomor = $halaman_awal + 1;
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
-                                                href="editadmin.php?id=<?php echo $data['id'] ?>"><i
+                                                href="editpengunjung.php?id=<?php echo $data['id'] ?>"><i
                                                     class='material-icons'>&#xE254;</i></a>
                                             <a class='delete' title='Delete' data-toggle='tooltip'
                                                 href="delete.php?id=<?php echo $data['id']; ?>"

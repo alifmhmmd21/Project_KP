@@ -50,12 +50,12 @@ if (isset($_SESSION['id']) != '') {
 							if(isset($_GET['pesan'])){
 								if($_GET['pesan'] == "gagal"){
 									echo "<div class='alert alert-danger' role='alert'>
-									<b>Username atau Password salah</b>, Isi kembali
-								  </div>";
+									<p style='text-align:center; font-weight: bold;'>Login Gagal</p> <p>Username atau Password yang anda masukan salah. </p>
+									</div>";
 								}
 								else if($_GET['pesan'] == "kosong"){
 									echo "<div class='alert alert-danger' role='alert'>
-									<b>Form dalam keadaan kosong</b>, Tolong di isi
+									Silakan masukkan username dan password.
 								  </div>";
 								}
 							}
