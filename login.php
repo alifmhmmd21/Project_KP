@@ -45,6 +45,22 @@ if (isset($_SESSION['id']) != '') {
 
 						<form method="POST" id="contactForm" name="contactForm" class="contactForm"
 							action="ceklogin.php">
+							<!-- Notification untuk Login -->
+							<?php 
+							if(isset($_GET['pesan'])){
+								if($_GET['pesan'] == "gagal"){
+									echo "<div class='alert alert-danger' role='alert'>
+									<b>Username atau Password salah</b>, Isi kembali
+								  </div>";
+								}
+								else if($_GET['pesan'] == "kosong"){
+									echo "<div class='alert alert-danger' role='alert'>
+									<b>Form dalam keadaan kosong</b>, Tolong di isi
+								  </div>";
+								}
+							}
+							?>
+							<!-- Form untuk login -->
 							<div class="input-group flex-nowrap">
 								<span class="input-group-text" id="addon-wrapping">@</span>
 								<input type="text" class="form-control" placeholder="Username" aria-label="Username"
@@ -63,18 +79,6 @@ if (isset($_SESSION['id']) != '') {
 										name="submit">
 								</div>
 							</div>
-
-							<?php 
-							if(isset($_GET['pesan'])){
-								if($_GET['pesan'] == "gagal"){
-									echo "<span style = 'color:red;'> Password atau Username salah</span>";
-								}
-								else if($_GET['pesan'] == "kosong"){
-									echo "<span style = 'color:red;'> Tolong lengkapi Formulirnya !!</span>";
-								}
-							}
-							?>
-
 						</form>
 					</div>
 				</div>
