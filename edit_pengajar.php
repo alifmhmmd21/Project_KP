@@ -28,7 +28,7 @@ if (isset($_POST['simpan'])) {
 
     if (empty($error)) {
         if ($id != "") {
-            $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi', where id = '$id'";
+            $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi' where id = '$id'";
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
