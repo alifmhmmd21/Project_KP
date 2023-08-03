@@ -1,16 +1,16 @@
-<?php 
+<?php
 session_start();
 include 'quer/config.php';
 
-$user		= stripcslashes($_POST['user']);
-$pass		= stripcslashes($_POST['password']);
-$user		= mysqli_escape_string($conn,$user);
-$pass		= mysqli_escape_string($conn,$pass);
+$user = stripcslashes($_POST['user']);
+$pass = stripcslashes($_POST['password']);
+$user = mysqli_escape_string($conn, $user);
+$pass = mysqli_escape_string($conn, $pass);
 
 
-$proses 	= "SELECT * FROM admin WHERE username ='$user' AND password ='$pass'";
-$login		= mysqli_query($conn, $proses);
-$cek		= mysqli_num_rows($login);
+$proses = "SELECT * FROM admin WHERE username ='$user' AND password ='$pass'";
+$login = mysqli_query($conn, $proses);
+$cek = mysqli_num_rows($login);
 
 if ($cek > 0) {
 	$data 		= mysqli_fetch_assoc($login);	

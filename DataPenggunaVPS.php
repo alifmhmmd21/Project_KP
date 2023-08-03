@@ -2,7 +2,7 @@
 
 <?php
 include 'quer/config.php';
-include ("incl/pengecekanlogin.php");
+include("incl/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
@@ -42,6 +42,9 @@ $query = mysqli_query($conn, $sql1);
     <title>Data Pengunjung</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,7 +60,7 @@ $query = mysqli_query($conn, $sql1);
 
 <body>
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width: 18%" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -148,7 +151,7 @@ $query = mysqli_query($conn, $sql1);
                                             <?php echo $data['alamat']; ?>
                                         </td>
                                         <td>
-                                            <?php echo '+62'. $data  ['hp']; ?>
+                                            <?php echo '+62' . $data['hp']; ?>
                                         </td>
                                         <td>
                                             <?php echo $data['subdomain']; ?>
@@ -218,7 +221,8 @@ $query = mysqli_query($conn, $sql1);
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
@@ -227,21 +231,23 @@ $query = mysqli_query($conn, $sql1);
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="alamat"
-                                        id="alamat" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="alamat" id="alamat"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="hp" id="hp" maxlength="12" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="hp" id="hp"
+                                        maxlength="12" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Sub Domain</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="subdomain" id="subdomain" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="subdomain"
+                                        id="subdomain" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Domain</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="domain"
-                                        id="domain" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="domain" id="domain"
+                                        required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -269,6 +275,7 @@ $query = mysqli_query($conn, $sql1);
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("openNav").style.display = "inline-block";
         }
+
     </script>
     <!-- <script src="js/tujuan.js"></script>                         -->
 </body>

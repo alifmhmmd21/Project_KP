@@ -1,13 +1,12 @@
-
 <?php
 $sukses     = "";
 $error      = "";
 
 include ("quer/config.php");
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-}else{
+} else {
     $id = "";
 }
 
@@ -26,21 +25,21 @@ if($id != ""){
 }
 
 if (isset($_POST['simpan'])) {
-    $name       = $_POST['name'];
-    $email      = $_POST['email'];
-    $phone      = $_POST['phone'];
-    $address    = $_POST['address'];
-    $materi     = $_POST['materi'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $materi = $_POST['materi'];
 
     if ($name ==''or $email =='' or $phone =='' or $address =='' or $materi =='') {
         $error = "Silahkan masukan semua data yang diperlukan";
     }
 
     if (empty($error)) {
-        if($id != ""){
-            $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi', where id = '$id'";
+        if ($id != "") {
+            $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi' where id = '$id'";
         }
-        $q1       = mysqli_query($conn,$sql1);
+        $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
             $sukses = "Data berhasil diupdate";
         } else {
@@ -52,6 +51,7 @@ if (isset($_POST['simpan'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,11 +60,12 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Edit Data</title>
 </head>
+
 <body>
-<div class="login-page">
-  <div class="modal-dialog">
+    <div class="login-page">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <form  method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
                     <div class="modal-header">
                         <h2 class="modal-title">Edit Data Pengajar</h>
                     </div>
@@ -91,34 +92,38 @@ if (isset($_POST['simpan'])) {
                         ?>
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="name" value=" <?php echo $name?>" name="name">
+                            <input type="text" class="form-control" id="name" value="<?php echo $name ?>" name="name">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" id="email" value=" <?php echo $email?>" name="email">
+                            <input type="text" class="form-control" id="email" value="<?php echo $email ?>"
+                                name="email">
                         </div>
                         <div class="form-group">
                             <label>No. HP</label>
-                            <input type="text" id="phone" class="form-control" value="<?php echo $phone?>" name="phone">
+                            <input type="text" id="phone" class="form-control" value="<?php echo $phone ?>" name="phone">
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" id="address" value=" <?php echo $address?>" name="address">
+                            <input type="text" class="form-control" id="address" value="<?php echo $address ?>"
+                                name="address">
                         </div>
                         <div class="form-group">
                             <label>Materi</label>
-                            <input type="text" class="form-control" id="materi" value=" <?php echo $materi ?>" name="materi">
+                            <input type="text" class="form-control" id="materi" value="<?php echo $materi ?>"
+                                name="materi">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <a href="DataPengajar.php">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </a>
                         <input type="submit" class="btn btn-success" name="simpan" value="Simpan Data">
                     </div>
                 </form>
             </div>
         </div>
-</div>
+    </div>
 </body>
+
 </html>
