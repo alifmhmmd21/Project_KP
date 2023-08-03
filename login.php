@@ -70,7 +70,7 @@ if (isset($_SESSION['id']) != '') {
 							<div class="input-group flex-nowrap">
 								<span class="input-group-text" id="addon-wrapping">#</span>
 								<input type="password" class="form-control" placeholder="Password" aria-label="Password"
-									aria-describedby="addon-wrapping" name="password" id="paswword">
+									aria-describedby="addon-wrapping" name="password" id="password">
 							</div>
 							<br>
 							<div class="form-group">

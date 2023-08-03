@@ -43,7 +43,7 @@ $nomor = $halaman_awal + 1;
 
 <body>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -86,11 +86,12 @@ $nomor = $halaman_awal + 1;
                             <div class="container text-center">
                                 <div class="row">
                                     <div class="col-5">
-                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
-                                        value="<?php echo $katakunci ?>" />
+                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci"
+                                            name="katakunci" value="<?php echo $katakunci ?>" />
                                     </div>
                                     <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengajar" class="btn btn-secondary" />
+                                        <input type="submit" name="cari" value="Cari Pengajar"
+                                            class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
                                         <a href="DataPengajar.php">
@@ -131,8 +132,8 @@ $nomor = $halaman_awal + 1;
                                 $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
-                                <tr>
-                                    <td>
+                                    <tr>
+                                        <td>
                                         <?php echo $nomor++ ?>
                                         </td>
                                         <td>
@@ -219,16 +220,17 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>No. HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="phone"
-                                        id="phone">
+                                    <input type="text" autocomplete="off" class="form-control" name="phone" id="phone">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="address" id="address">
+                                    <input type="text" autocomplete="off" class="form-control" name="address"
+                                        id="address">
                                 </div>
                                 <div class="form-group">
                                     <label>Materi</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="materi" id="materi">
+                                    <input type="text" autocomplete="off" class="form-control" name="materi"
+                                        id="materi">
                                 </div>
                             </div>
                             <div class="modal-footer">
