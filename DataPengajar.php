@@ -131,24 +131,29 @@ $nomor = $halaman_awal + 1;
                                 $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
-                                    <tr>
+                                <tr>
                                     <td>
                                         <?php echo $nomor++ ?>
                                         </td>
                                         <td>
                                             <?php echo $data['name'] ?>
+                                            <?php echo substr($name, 0, 20); ?>
                                         </td>
                                         <td>
                                             <?php echo $data['email'] ?>
+                                            <?php echo substr($email, 0, 20); ?>
                                         </td>
                                         <td>
                                             <?php echo $data['phone'] ?>
+                                            <?php echo substr($phone, 0, 20); ?>
                                         </td>
                                         <td>
                                             <?php echo $data['address'] ?>
+                                            <?php echo substr($address, 0, 20); ?>
                                         </td>
                                         <td>
                                             <?php echo $data['materi'] ?>
+                                            <?php echo substr($materi, 0, 20); ?>
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
