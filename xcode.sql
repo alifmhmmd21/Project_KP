@@ -43,27 +43,6 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajar`
---
-
-CREATE TABLE `pengajar` (
-  `nama` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` bigint(50) NOT NULL,
-  `alamat` varchar(200) NOT NULL,
-  `materi` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `pengajar`
---
-
-INSERT INTO `pengajar` (`nama`, `email`, `phone`, `alamat`, `materi`) VALUES
-('Raven Fajar Febriano', 'Ravenfajar@gmail.com', 89999764513, 'Jl. salatiga no 54B RT/RW 09/08 Pasar Baru Tembalang Salatiga', 'Back End');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `pengajars`
 --
 
@@ -84,10 +63,10 @@ CREATE TABLE `pengajars` (
 INSERT INTO `pengajars` (`id`, `name`, `email`, `phone`, `address`, `materi`, `created_at`) VALUES
 (5, 'raven', 'raven@gmail.com', 843575272, 'salatiga', 'php', '2023-07-17 09:47:52'),
 (6, 'faiz', 'faiz@gmail.com', 123456, 'Semarang', 'designer', '2023-07-17 11:25:46'),
-(11, 'raven', 'bujeliah@gmail.com', 856738547, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Front end', '2023-07-20 12:51:05'),
 (25, 'kakai', 'muhammadkaisan3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-23 01:56:08'),
 (29, 'Rizky', 'Dhiyarizqi3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Jaringan nirkabel', '2023-07-28 13:25:54'),
 (31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18');
+
 
 -- --------------------------------------------------------
 
@@ -140,7 +119,9 @@ INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALU
 (24, 312312312, ' Faiz', 'sadasdasdqw', 12512, 'dasdasdas adsdasdsa'),
 (25, 123123142, ' Raven', 'sdqdwqdq', 31323123, 'dasdwqddqdqw iyalah'),
 (26, 41213123, '  Halo', 'dafwefwev', 213412321, 'tujuan kami berkunjung untuk mengikat tali silaturahim'),
-(28, 0, 'Raven Fajar Febriano', 'Jl. salatiga no 54 rt rw 04 06 salatiga', 0, '');
+(28, 0, 'Raven Fajar Febriano', 'Jl. salatiga no 54 rt rw 04 06 salatiga', 0, ''),
+(31, 38989228, 'Kaisan', 'Jl. berkah', 2147483647, 'kerjasama'),
+(33, 231213123, 'kaisan', '21313123132', 12313123, '1321312312');
 
 --
 -- Indexes for dumped tables
@@ -156,8 +137,8 @@ ALTER TABLE `admin`
 -- Indeks untuk tabel `pengajars`
 --
 ALTER TABLE `pengajars`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indeks untuk tabel `penggunavps`
@@ -170,7 +151,7 @@ ALTER TABLE `penggunavps`
 --
 ALTER TABLE `visiter`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `no_ktp` (`no_ktp`);
+
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -186,7 +167,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `pengajars`
 --
 ALTER TABLE `pengajars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `penggunavps`
@@ -198,7 +179,7 @@ ALTER TABLE `penggunavps`
 -- AUTO_INCREMENT untuk tabel `visiter`
 --
 ALTER TABLE `visiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

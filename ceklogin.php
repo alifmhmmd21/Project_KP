@@ -18,7 +18,7 @@ if ($cek > 0) {
 	$db_user		= $data['username'];
 	$db_pass		= $data['password'];
 	$_SESSION['id']	= $db_id;
-		header("location:DataPengunjung.php");	
+		header("location:DataPenggunaVPS.php");	
 }else{
 	echo "<script>alert('LOGIN GAGAL');document.location.href='login.php'</script>";
 }
