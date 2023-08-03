@@ -75,8 +75,8 @@ $query = mysqli_query($conn, $sql1);
 
     </div>
 
-    <div id="main">
-        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div id="main" style="margin-left: 18%;">
+        <button id="openNav" class="w3-button w3-xlarge" style="display: none" onclick="w3_open()">&#9776;</button>
         <div class="w3-container">
             <h1 class="w3-center" style="font-family: 'Inter', sans-serif;">Data Pengguna Hosting</h1>
         </div>

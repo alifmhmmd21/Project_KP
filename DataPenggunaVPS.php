@@ -60,7 +60,8 @@ $query = mysqli_query($conn, $sql1);
 
 <body>
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width: 18%" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
+        style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -77,8 +78,8 @@ $query = mysqli_query($conn, $sql1);
 
     </div>
 
-    <div id="main">
-        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div id="main" style="margin-left: 18%;">
+        <button id="openNav" class="w3-button w3-xlarge" style="display: none" onclick="w3_open()">&#9776;</button>
         <div class="w3-container">
             <h1 class="w3-center">Halo Admin</h1>
         </div>
@@ -90,7 +91,7 @@ $query = mysqli_query($conn, $sql1);
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2><b>Data Pengguna VPS</b></h2>
+                                    <h2 style="font-family: 'Inter', sans-serif;"><b>Data Pengguna VPS</b></h2>
                                 </div>
                                 <div class="col-sm-4">
                                     <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
@@ -122,7 +123,7 @@ $query = mysqli_query($conn, $sql1);
                         <br>
                         <table class="table table-bordered table-hover">
                             <thead>
-                                <tr>
+                                <tr style="font-family: 'Inter', sans-serif;">
                                     <th class="col-sm-1">No</th>
                                     <th class="col-md-4">Nomor KTP</th>
                                     <th class="col-md-4">Nama</th>
@@ -133,7 +134,7 @@ $query = mysqli_query($conn, $sql1);
                                     <th class="col-sm-1">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody style="font-family: 'Inter', sans-serif;">
                                 <?php
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
@@ -210,7 +211,7 @@ $query = mysqli_query($conn, $sql1);
             <!-- Untuk Tampilan Add -->
             <div id="tambah-teks" class="modal fade">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content" style="font-family: 'Inter', sans-serif;">
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
                             action="Tambah_PenggunaVPS.php">
                             <div class="modal-header">

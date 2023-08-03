@@ -41,7 +41,7 @@ $nomor = $halaman_awal + 1;
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="font-family: 'Inter', sans-serif;">
 
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
@@ -60,8 +60,8 @@ $nomor = $halaman_awal + 1;
 
     </div>
 
-    <div id="main">
-        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div id="main" style="margin-left: 18%;">
+        <button id="openNav" class="w3-button w3-xlarge" style="display: none" onclick="w3_open()">&#9776;</button>
         <div class="w3-container">
             <h1 class="w3-center">Halo Admin</h1>
         </div>
