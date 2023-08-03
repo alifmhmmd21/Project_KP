@@ -1,25 +1,8 @@
 <!DOCTYPE html>
 
 <?php
-session_start();
 include 'quer/config.php';
-
-/*
-$batas = 5;
-$halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
-$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-$previous = $halaman - 1;
-$next = $halaman + 1;
-
-$data = mysqli_query($conn, "select * from penggunavps");
-$jumlah_data = mysqli_num_rows($data);
-$total_halaman = ceil($jumlah_data / $batas);
-
-$query = mysqli_query($conn, "select * from penggunavps limit $halaman_awal, $batas");
-$nomor = $halaman_awal + 1;
-*/
-
-
+include ("incl/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
