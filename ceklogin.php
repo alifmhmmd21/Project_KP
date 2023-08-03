@@ -24,7 +24,4 @@ if ($cek > 0) {
 	}else{
 		header("location:login.php?pesan=kosong");
 	}
-// }else{
-// 	echo "<script>alert('LOGIN GAGAL');document.location.href='login.php'</script>";
-// }
 ?>
