@@ -1,11 +1,11 @@
 <!doctype html>
 <!--Uji Coba Start-->
 <?php
-include("quer/config.php");
+include("../quer/config.php");
 
 session_start();
 if (isset($_SESSION['id']) != '') {
-	header("location:DataPengunjung.php");
+	header("location:../dashboard/DataPenggunaVPS.php");
 	exit();
 }
 ?>
@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) != '') {
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="css/hasil.css">
+	<link rel="stylesheet" href="../css/hasil.css">
 
 </head>
 
@@ -36,7 +36,7 @@ if (isset($_SESSION['id']) != '') {
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
-						<img src="asset/logo.png"
+						<img src="../asset/logo.png"
 							style="display: block; margin-left: auto; margin-right:auto; width:200px; height:50px;">
 						<br>
 						<h5 class="mb-4"

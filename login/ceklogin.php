@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'quer/config.php';
+include ("../quer/config.php");
 
 $user = stripcslashes($_POST['user']);
 $pass = stripcslashes($_POST['password']);
@@ -18,7 +18,7 @@ if ($cek > 0) {
 	$db_user		= $data['username'];
 	$db_pass		= $data['password'];
 	$_SESSION['id']	= $db_id;
-		header("location:DataPenggunaVPS.php");	
+		header("location:../dashboard/DataPenggunaVPS.php");	
 
 	}elseif($login != $user && $pass){
 		header("location:login.php?pesan=gagal");
