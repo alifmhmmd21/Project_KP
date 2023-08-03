@@ -64,11 +64,11 @@ if (isset($_POST['simpan'])) {
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="name" value=" <?php echo $name ?>" name="name">
+                            <input type="text" class="form-control" id="name" value="<?php echo $name ?>" name="name">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" id="email" value=" <?php echo $email ?>"
+                            <input type="text" class="form-control" id="email" value="<?php echo $email ?>"
                                 name="email">
                         </div>
                         <div class="form-group">
@@ -77,12 +77,12 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" id="address" value=" <?php echo $address ?>"
+                            <input type="text" class="form-control" id="address" value="<?php echo $address ?>"
                                 name="address">
                         </div>
                         <div class="form-group">
                             <label>Materi</label>
-                            <input type="text" class="form-control" id="materi" value=" <?php echo $materi ?>"
+                            <input type="text" class="form-control" id="materi" value="<?php echo $materi ?>"
                                 name="materi">
                         </div>
                     </div>
