@@ -1,14 +1,11 @@
-<?php 
+<?php
 include_once "quer/config.php";
-$id=$_GET['id'];
+$id = $_GET['id'];
 $sql = "DELETE FROM pengajars WHERE id = '$id'";
-$query = mysqli_query($conn,$sql);
-if($query)
-{
-header('location:DataPengajar.php');
-}
-else
-{
-echo "hapus guru Gagal";
+$query = mysqli_query($conn, $sql);
+if ($query) {
+    header('location:DataPengajar.php');
+} else {
+    echo "hapus guru Gagal";
 }
 ?>
