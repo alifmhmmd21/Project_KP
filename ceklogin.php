@@ -19,7 +19,12 @@ if ($cek > 0) {
 	$db_pass		= $data['password'];
 	$_SESSION['id']	= $db_id;
 		header("location:DataPenggunaVPS.php");	
-}else{
-	echo "<script>alert('LOGIN GAGAL');document.location.href='login.php'</script>";
-}
+	}elseif($login != $user && $pass){
+		header("location:login.php?pesan=gagal");
+	}else{
+		header("location:login.php?pesan=kosong");
+	}
+// }else{
+// 	echo "<script>alert('LOGIN GAGAL');document.location.href='login.php'</script>";
+// }
 ?>

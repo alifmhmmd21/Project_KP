@@ -63,6 +63,18 @@ if (isset($_SESSION['id']) != '') {
 										name="submit">
 								</div>
 							</div>
+
+							<?php 
+							if(isset($_GET['pesan'])){
+								if($_GET['pesan'] == "gagal"){
+									echo "<span style = 'color:red;'> Password atau Username salah</span>";
+								}
+								else if($_GET['pesan'] == "kosong"){
+									echo "<span style = 'color:red;'> Tolong lengkapi Formulirnya !!</span>";
+								}
+							}
+							?>
+
 						</form>
 					</div>
 				</div>
