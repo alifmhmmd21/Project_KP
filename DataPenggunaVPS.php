@@ -42,6 +42,9 @@ $query = mysqli_query($conn, $sql1);
     <title>Data Pengunjung</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -59,7 +62,7 @@ $query = mysqli_query($conn, $sql1);
     <!-- Sidebar Container -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width: 18%" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-        <ul>
+        <ul class="listNav">
             <li><a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a></li>
             <li><a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a></li>
             <li><a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a></li>
