@@ -1,5 +1,8 @@
 
 <?php
+$sukses     = "";
+$error      = "";
+
 include ("quer/config.php");
 
 if(isset($_GET['id'])){
@@ -7,6 +10,7 @@ if(isset($_GET['id'])){
 }else{
     $id = "";
 }
+
 
 if($id != ""){
     $sql1       = "select * from pengajars where id='$id'";
@@ -17,6 +21,7 @@ if($id != ""){
     $phone      = $r1['phone'];
     $address    = $r1['address'];
     $materi     = $r1['materi'];
+
     
 }
 
@@ -27,16 +32,19 @@ if (isset($_POST['simpan'])) {
     $address    = $_POST['address'];
     $materi     = $_POST['materi'];
 
+    if ($name ==''or $email =='' or $phone =='' or $address =='' or $materi =='') {
+        $error = "Silahkan masukan semua data yang diperlukan";
+    }
+
     if (empty($error)) {
         if($id != ""){
             $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi', where id = '$id'";
         }
         $q1       = mysqli_query($conn,$sql1);
         if ($q1) {
-            header('location:DataPengajar.php');
+            $sukses = "Data berhasil diupdate";
         } else {
-            header("location:edit_pengajar.php?id");
-
+            $error  = "Data gagal diupdate";
         }
     }
 }
@@ -61,6 +69,26 @@ if (isset($_POST['simpan'])) {
                         <h2 class="modal-title">Edit Data Pengajar</h>
                     </div>
                     <div class="modal-body">
+                        <?php
+                        if ($error) {
+                        ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $error ?>
+                            </div>
+
+                        <?php
+                        }
+                        ?>
+
+                        <?php
+                        if ($sukses) {
+                        ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $sukses ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="text" class="form-control" id="name" value=" <?php echo $name?>" name="name">

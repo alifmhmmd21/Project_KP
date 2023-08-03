@@ -155,7 +155,7 @@ $nomor = $halaman_awal + 1;
                                                 href="editpengunjung.php?id=<?php echo $data['id'] ?>"><i
                                                     class='material-icons'>&#xE254;</i></a>
                                             <a class='delete' title='Delete' data-toggle='tooltip'
-                                                href="delete.php?id=<?php echo $data['id']; ?>"
+                                                href="deletepengunjung.php?id=<?php echo $data['id']; ?>"
                                                 onclick="return confirm('Apakah Yakin Hapus Data ?')"><i
                                                     class='material-icons'>&#xE872;</i></a>
                                         </td>
@@ -210,7 +210,7 @@ $nomor = $halaman_awal + 1;
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
                                     <input type="text" autocomplete="off" class="form-control" name="noktp" id="noktp"
-                                        maxlength="16" required>
+                                        maxlength="16">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
