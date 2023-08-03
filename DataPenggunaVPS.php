@@ -2,11 +2,7 @@
 
 <?php
 include 'quer/config.php';
-session_start();
-if ($_SESSION['id'] == '') {
-    header("location:login.php");
-    exit();
-}
+include ("incl/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
