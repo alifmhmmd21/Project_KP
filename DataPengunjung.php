@@ -43,7 +43,7 @@ $nomor = $halaman_awal + 1;
 
 <body style="font-family: 'Inter', sans-serif;">
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:block; width:18%;" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; width:18%;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
@@ -153,10 +153,10 @@ $nomor = $halaman_awal + 1;
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
-                                                href="editadmin.php?id=<?php echo $data['id'] ?>"><i
+                                                href="editpengunjung.php?id=<?php echo $data['id'] ?>"><i
                                                     class='material-icons'>&#xE254;</i></a>
                                             <a class='delete' title='Delete' data-toggle='tooltip'
-                                                href="delete.php?id=<?php echo $data['id']; ?>"
+                                                href="deletepengunjung.php?id=<?php echo $data['id']; ?>"
                                                 onclick="return confirm('Apakah Yakin Hapus Data ?')"><i
                                                     class='material-icons'>&#xE872;</i></a>
                                         </td>
@@ -197,7 +197,7 @@ $nomor = $halaman_awal + 1;
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
-                            action="tambah_admin.php">
+                            action="tambah_pengunjung_admin.php">
                             <div class="modal-header">
                                 <h4 class="modal-title">Tambah Tujuan Kunjungan</h4>
                                 <button type="button" class="close" data-dismiss="modal"
@@ -211,7 +211,7 @@ $nomor = $halaman_awal + 1;
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
                                     <input type="text" autocomplete="off" class="form-control" name="noktp" id="noktp"
-                                        maxlength="16" required>
+                                        maxlength="16">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>

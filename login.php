@@ -52,13 +52,15 @@ if (isset($_SESSION['id']) != '') {
 									echo "<div class='alert alert-danger' role='alert'>
 									<b>Username atau Password salah</b>, Isi kembali
 								  </div>";
-								} else if ($_GET['pesan'] == "kosong") {
+								}
+								else if($_GET['pesan'] == "kosong"){
 									echo "<div class='alert alert-danger' role='alert'>
-									<b>Form dalam keadaan kosong</b>, Tolong di isi
+									Silakan masukkan username dan password.
 								  </div>";
 								}
 							}
 							?>
+							
 							<!-- Form untuk login -->
 							<div class="input-group flex-nowrap">
 								<span class="input-group-text" id="addon-wrapping">@</span>

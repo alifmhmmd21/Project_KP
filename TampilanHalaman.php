@@ -24,13 +24,8 @@
 								<div class="contact-wrap w-100 p-md-5 p-4">
 
 									<img src="asset/X2.png" style="display: block; margin-left: auto; margin-right:auto; width:70px; height:50px;">
-
-									<h6 class="mb-4" style="background:-webkit-linear-gradient(#000000,#F21717,#000000,#000000);-webkit-background-clip: text;-webkit-text-fill-color: transparent; text-align:center;">Selamat Datang di <br>PT. Teknologi Server Indonesia<br> Mohon mengisi data pribadi Anda pada Formulir Kunjungan</h6>
-									<div id="form-message-warning" class="mb-4"></div> 
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      	</div>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm" action="tambah.php">
+									<br>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm" action="tambah_user.php">
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
