@@ -43,7 +43,7 @@ $nomor = $halaman_awal + 1;
 
 <body style="font-family: 'Inter', sans-serif;">
     <!-- Sidebar Container -->
-    <ddiv class="w3-sidebar w3-bar-block w3-card w3-animate-left"
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="Home.php" class="w3-bar-item w3-button">Home</a>
@@ -70,11 +70,11 @@ $nomor = $halaman_awal + 1;
             </div>
         </header>
         <div class="w3-container">
-            <h1 class="w3-center">Halo Admin</h1>
+            <h1 class="w3-center" tyle="font-family: 'Inter', sans-serif;">Data Pengunjung</h1>
         </div>
 
         <div class="container-fluid">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
