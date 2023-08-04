@@ -60,17 +60,11 @@ $query = mysqli_query($conn, $sql1);
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
-        <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="../login/logout.php">
-            <i class="fa fa-power-off fa-lg">
-                <h7>
-                    <b> Logout </b>
-                </h7>
-            </i>
-        </a>
     </div>
 
     </div>
@@ -86,7 +80,7 @@ $query = mysqli_query($conn, $sql1);
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
                     </a>
                     <ul class="dropdown-menu text-small" style="">
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../login/logout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
