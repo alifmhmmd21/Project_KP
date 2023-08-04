@@ -43,15 +43,14 @@ $nomor = $halaman_awal + 1;
 
 <body style="font-family: 'Inter', sans-serif;">
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
+    <ddiv class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
-            </i>
-        </a>
     </div>
 
     <div id="main" style="margin-left: 18%;">
