@@ -85,14 +85,6 @@ $nomor = $halaman_awal + 1;
                     <div class="table-wrapper">
                         <div class="table-title">
                             <div class="row">
-                                <div class="col-sm-8">
-                                    <h2>Data <b>Kunjungan</b></h2>
-                                </div>
-                                <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
-                                        style="float: right;"><i class="material-icons">&#xE147;</i>
-                                        <span>Tambah</span></a>
-                                </div>
                             </div>
                         </div>
                         <form>
@@ -110,6 +102,11 @@ $nomor = $halaman_awal + 1;
                                         <a href="DataPengunjung.php">
                                             <input type="button" class="btn btn-primary" value="Refresh">
                                         </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
+                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -50px;"><i class="material-icons">&#xE147;</i>
+                                        <span>Tambah</span></a>
                                     </div>
                                 </div>
                             </div>

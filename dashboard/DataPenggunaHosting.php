@@ -100,16 +100,7 @@ $query = mysqli_query($conn, $sql1);
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h2 style="font-family: 'Inter', sans-serif;"><b>Data Pengguna Hosting</b></h2>
-                                </div>
-                                <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
-                                        style="float: right;"><i class="material-icons">&#xE147;</i>
-                                        <span>Tambah</span></a>
-                                </div>
-                            </div>
+                            
                             <!--Search bar -->
                         </div>
                         <form>
@@ -128,6 +119,11 @@ $query = mysqli_query($conn, $sql1);
                                             <input type="button" class="btn btn-primary" value="Refresh">
                                         </a>
                                     </div>
+                                    <div class="col-sm-4">
+                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
+                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -50px;"><i class="material-icons">&#xE147;</i>
+                                        <span>Tambah</span></a>
+                                </div>
                                 </div>
                             </div>
                         </form>
