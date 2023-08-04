@@ -50,13 +50,6 @@ $nomor = $halaman_awal + 1;
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
-        <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="../login/logout.php">
-            <i class="fa fa-power-off fa-lg">
-                <h7>
-                    <b> Logout </b>
-                </h7>
-            </i>
-        </a>
     </div>
 
     </div>
@@ -72,7 +65,7 @@ $nomor = $halaman_awal + 1;
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
                     </a>
                     <ul class="dropdown-menu text-small" style="">
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../login/logout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
