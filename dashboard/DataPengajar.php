@@ -86,7 +86,7 @@ $nomor = $halaman_awal + 1;
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
-                            <div class="row">
+                        <div class="row">
                             </div>
                         </div>
                         <form>

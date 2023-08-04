@@ -59,8 +59,6 @@ $nomor = $halaman_awal + 1;
         </a>
     </div>
 
-    </div>
-
     <div id="main" style="margin-left: 18%;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
