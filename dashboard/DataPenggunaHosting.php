@@ -113,7 +113,7 @@ $query = mysqli_query($conn, $sql1);
                                     </div>
                                     <div class="col-sm-4">
                                     <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
-                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -60px;"><i class="material-icons">&#xE147;</i>
+                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -50px;"><i class="material-icons">&#xE147;</i>
                                         <span>Tambah</span></a>
                                 </div>
                                 </div>
