@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include ("../quer/config.php");
+include("../quer/config.php");
 include("../login/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
@@ -56,12 +56,12 @@ $query = mysqli_query($conn, $sql1);
 </head>
 
 <body>
-     <!-- Sidebar Container -->
-     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
+    <!-- Sidebar Container -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
-        <a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a>
+        <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
         <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="../login/logout.php">
@@ -76,7 +76,21 @@ $query = mysqli_query($conn, $sql1);
     </div>
 
     <div id="main" style="margin-left: 18%;">
-        <button id="openNav" class="w3-button w3-xlarge" style="display: none" onclick="w3_open()">&#9776;</button>
+        <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
+            <div class="d-flex flex-wrap">
+                <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
+                    onclick="w3_open()">&#9776;</button>
+                <div class="dropdown text-end ms-auto">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+                    </a>
+                    <ul class="dropdown-menu text-small" style="">
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         <div class="w3-container">
             <h1 class="w3-center" style="font-family: 'Inter', sans-serif;">Data Pengguna Hosting</h1>
         </div>
