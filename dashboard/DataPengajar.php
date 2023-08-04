@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include ("../quer/config.php");
+include("../quer/config.php");
 include("../login/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
@@ -42,12 +42,12 @@ $nomor = $halaman_awal + 1;
 </head>
 
 <body>
- <!-- Sidebar Container -->
+    <!-- Sidebar Container -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
-        <a href="#" class="w3-bar-item w3-button">Data Pengguna VPS</a>
+        <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
         <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="../login/logout.php">
@@ -61,8 +61,22 @@ $nomor = $halaman_awal + 1;
 
     </div>
 
-    <div id="main">
-        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div id="main" style="margin-left: 18%;">
+        <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
+            <div class="d-flex flex-wrap">
+                <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
+                    onclick="w3_open()">&#9776;</button>
+                <div class="dropdown text-end ms-auto">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+                    </a>
+                    <ul class="dropdown-menu text-small" style="">
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         <div class="w3-container">
             <h1 class="w3-center">Data Pengajar</h1>
         </div>
@@ -87,11 +101,12 @@ $nomor = $halaman_awal + 1;
                             <div class="container text-center">
                                 <div class="row">
                                     <div class="col-5">
-                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci" name="katakunci"
-                                        value="<?php echo $katakunci ?>" />
+                                        <input type="text" class="form-control" placeholder="Masukan Kata Kunci"
+                                            name="katakunci" value="<?php echo $katakunci ?>" />
                                     </div>
                                     <div class="col-auto">
-                                        <input type="submit" name="cari" value="Cari Pengajar" class="btn btn-secondary" />
+                                        <input type="submit" name="cari" value="Cari Pengajar"
+                                            class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
                                         <a href="DataPengajar.php">
@@ -133,8 +148,8 @@ $nomor = $halaman_awal + 1;
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
-                                    <td>
-                                        <?php echo $nomor++ ?>
+                                        <td>
+                                            <?php echo $nomor++ ?>
                                         </td>
                                         <td>
                                             <?php echo $data['name'] ?>
@@ -215,16 +230,17 @@ $nomor = $halaman_awal + 1;
                                 </div>
                                 <div class="form-group">
                                     <label>No. HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="phone"
-                                        id="phone">
+                                    <input type="text" autocomplete="off" class="form-control" name="phone" id="phone">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="address" id="address">
+                                    <input type="text" autocomplete="off" class="form-control" name="address"
+                                        id="address">
                                 </div>
                                 <div class="form-group">
                                     <label>Materi</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="materi" id="materi">
+                                    <input type="text" autocomplete="off" class="form-control" name="materi"
+                                        id="materi">
                                 </div>
                             </div>
                             <div class="modal-footer">
