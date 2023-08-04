@@ -86,9 +86,9 @@ $nomor = $halaman_awal + 1;
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
-                            <div class="row">
+                        <div class="row">
                                 <div class="col-sm-8">
-                                    <h2>Data <b>Pengajar</b></h2>
+                                    <h2>Data <b>Kunjungan</b></h2>
                                 </div>
                                 <div class="col-sm-4">
                                     <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
@@ -100,18 +100,17 @@ $nomor = $halaman_awal + 1;
                         <form>
                             <div class="container text-center">
                                 <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-sm-5">
                                         <input type="text" class="form-control" placeholder="Masukan Kata Kunci"
                                             name="katakunci" value="<?php echo $katakunci ?>" />
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-sm-1">
                                         <input type="submit" name="cari" value="Cari Pengajar"
                                             class="btn btn-secondary" />
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-sm-2">
                                         <a href="DataPengajar.php">
-                                            <input type="button" class="btn btn-primary" value="Refresh">
-                                        </a>
+                                            <input type="button" class="btn btn-primary" value="Refresh"></a>
                                     </div>
                                 </div>
                             </div>
