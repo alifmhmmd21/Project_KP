@@ -2,7 +2,7 @@
 $sukses     = "";
 $error      = "";
 
-include ("quer/config.php");
+include ("../quer/config.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -115,7 +115,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="DataPengajar.php">
+                        <a href="../dashboard/DataPengajar.php">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </a>
                         <input type="submit" class="btn btn-success" name="simpan" value="Simpan Data">

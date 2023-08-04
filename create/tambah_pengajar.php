@@ -1,5 +1,5 @@
 <?php
-    require 'quer/config.php';
+    require '../quer/config.php';
 
             $name      = $_POST['name'];
             $email     = $_POST['email'];
@@ -11,7 +11,7 @@
 
             $query = mysqli_query($conn,$akhir);
             if($query){
-                header('location:DataPengajar.php');
+                header('location:../dashboard/DataPengajar.php');
                 }else{
                 echo"Gagal Disimpan";
             }

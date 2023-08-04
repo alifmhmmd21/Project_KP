@@ -1,5 +1,5 @@
 <?php
-include("quer/config.php");
+include("../quer/config.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -32,9 +32,9 @@ if (isset($_POST['simpan'])) {
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
-            header('location:DataPengunjung.php');
+            header('location:../dashboard/DataPengunjung.php');
         } else {
-            header("location:editadmin.php?id");
+            header("location:../edit/editadmin.php?id");
 
         }
     }
@@ -87,7 +87,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="DataPengunjung.php">
+                        <a href="../dashboard/DataPengunjung.php">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </a>
                         <input type="submit" class="btn btn-success" name="simpan" value="Simpan Data">

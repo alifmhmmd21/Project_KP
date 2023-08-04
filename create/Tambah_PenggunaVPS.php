@@ -1,6 +1,6 @@
 <!-- Insert Database -->
 <?php
-    require 'quer/config.php';
+    require '../quer/config.php';
             $ktp        = $_POST['ktp'];
             $nama       = $_POST['nama'];
             $alamat     = $_POST['alamat'];
@@ -12,7 +12,7 @@
 
             $query = mysqli_query($conn,$akhir);
             if($query){
-                header('location:DataPenggunaVPS.php');
+                header('location:../dashboard/DataPenggunaVPS.php');
                 }else{
                 echo"Gagal Disimpan";
             }

@@ -1,5 +1,5 @@
 <?php
-    require 'quer/config.php';
+    require '../quer/config.php';
             $no_ktp = $_POST['noktp'];
             $nama=$_POST['nama'];
             $alamat = $_POST['alamat'];
@@ -10,7 +10,7 @@
 
             $query = mysqli_query($conn,$akhir);
             if($query){
-                header('location:DataPengunjung.php');
+                header('location:../dashboard/DataPengunjung.php');
                 }else{
                 echo"Gagal Disimpan";
             }
