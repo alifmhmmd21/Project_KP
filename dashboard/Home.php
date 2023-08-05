@@ -49,7 +49,7 @@
     <div class="container">
         <div class="row text-center">
         <div class="col-lg">
-            <div class="card bg-primary text-light">
+            <div class="card bg-primary-subtle text-secondary">
                 <div class="card-body text-center">
                 <i class="fa fa-solid fa-cloud-arrow-up" style="font-size:90px"></i>
                     <h4>Data Pengguna Hosting</h4>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="col-lg">
-            <div class="card bg-danger text-light">
+            <div class="card bg-danger-subtle text-secondary">
                 <div class="card-body text-center">
                 <i class="fa fa-server" style="font-size:90px"></i>
                     <h4>Data Pengguna VPS</h4>
@@ -70,12 +70,12 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
 
                     </p>
-                    <button type="button" class="btn btn-primary">Selengkapnya</button>
+                    <button type="button" class="btn btn-danger">Selengkapnya</button>
                 </div>
             </div>
         </div>
         <div class="col-lg">
-            <div class="card bg-warning text-light">
+            <div class="card bg-warning-subtle text-secondary">
                 <div class="card-body text-center">
                 <i class="fa fa-user" style="font-size:90px"></i>
                     <h4>Data Pengunjung</h4>
@@ -83,12 +83,12 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
 
                     </p>
-                    <button type="button" class="btn btn-primary">Selengkapnya</button>
+                    <button type="button" class="btn btn-warning">Selengkapnya</button>
                 </div>
             </div>
         </div>
         <div class="col-lg">
-            <div class="card bg-success text-light">
+            <div class="card bg-success-subtle text-secondary">
                 <div class="card-body text-center">
                 <i class='fas fa-person-chalkboard' style='font-size:90px'></i>
                     <h4>Data Pengajar</h4>
@@ -96,7 +96,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
 
                     </p>
-                    <button type="button" class="btn btn-primary">Selengkapnya</button>
+                    <button type="button" class="btn btn-success">Selengkapnya</button>
                 </div>
             </div>
         </div>
