@@ -63,19 +63,11 @@ $query = mysqli_query($conn, $sql1);
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
         style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
-        <a class="w3-bar-item w3-button" style="position: absolute; left: 0;bottom: 0;" href="../login/logout.php">
-            <i class="fa fa-power-off fa-lg">
-                <h7>
-                    <b> Logout </b>
-                </h7>
-            </i>
-        </a>
-    </div>
-
     </div>
 
     <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
@@ -89,7 +81,7 @@ $query = mysqli_query($conn, $sql1);
                         <img src="../asset/user.png" alt="mdo" width="32" height="32" class="rounded-circle" />
                     </a>
                     <ul class="dropdown-menu text-small" style="">
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../login/logout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
@@ -103,16 +95,7 @@ $query = mysqli_query($conn, $sql1);
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h2 style="font-family: 'Inter', sans-serif;"><b>Data Pengguna Hosting</b></h2>
-                                </div>
-                                <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
-                                        style="float: right;"><i class="material-icons">&#xE147;</i>
-                                        <span>Tambah</span></a>
-                                </div>
-                            </div>
+                            
                             <!--Search bar -->
                         </div>
                         <form>
@@ -131,6 +114,11 @@ $query = mysqli_query($conn, $sql1);
                                             <input type="button" class="btn btn-primary" value="Refresh">
                                         </a>
                                     </div>
+                                    <div class="col-sm-4">
+                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
+                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -50px;"><i class="material-icons">&#xE147;</i>
+                                        <span>Tambah</span></a>
+                                </div>
                                 </div>
                             </div>
                         </form>
