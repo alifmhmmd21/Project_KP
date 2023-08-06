@@ -47,6 +47,9 @@ $query = mysqli_query($conn, $sql1);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/data.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -124,7 +127,7 @@ $query = mysqli_query($conn, $sql1);
                                             class="btn btn-secondary" />
                                     </div>
                                     <div class="col-auto">
-                                        <a href="DataPenggunaVPS.php">
+                                        <a href="DataPenggunaHosting.php">
                                             <input type="button" class="btn btn-primary" value="Refresh">
                                         </a>
                                     </div>
@@ -173,10 +176,10 @@ $query = mysqli_query($conn, $sql1);
                                         </td>
                                         <td>
                                             <a class='edit' title='Edit' data-toggle='tooltip'
-                                                href="../edit/edit_penggunavps.php?id=<?php echo $data['id'] ?>"><i
+                                                href="../edit/edit_penggunahosting.php?id=<?php echo $data['id'] ?>"><i
                                                     class='material-icons'>&#xE254;</i></a>
                                             <a class='delete' title='Delete' data-toggle='tooltip'
-                                                href="../delete/deletePenggunaVps.php?id=<?php echo $data['id']; ?>"
+                                                href="../delete/deletehosting.php?id=<?php echo $data['id']; ?>"
                                                 onclick="return confirm('Apakah Yakin Hapus Data ?')"><i
                                                     class='material-icons'>&#xE872;</i></a>
                                         </td>
@@ -201,7 +204,7 @@ $query = mysqli_query($conn, $sql1);
                                     ?>
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="DataPenggunaVPS.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                            href="DataPenggunaHosting.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
                                     </li>
                                     <?php
                                 }
@@ -224,9 +227,9 @@ $query = mysqli_query($conn, $sql1);
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm"
-                            action="../create/Tambah_PenggunaVPS.php">
+                            action="../create/tambah_hosting.php">
                             <div class="modal-header">
-                                <h4 class="modal-title">Tambah Data Pengguna VPS</h4>
+                                <h4 class="modal-title">Tambah Data Pengguna Hosting</h4>
                                 <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">&times;</button>
                             </div>

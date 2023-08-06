@@ -78,7 +78,7 @@ $query = mysqli_query($conn, $sql1);
 
     </div>
 
-    <div id="main" style="margin-left: 18%;">
+    <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
                 <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
