@@ -50,53 +50,60 @@
         <div class="row text-center">
         <div class="col-lg">
             <div class="card bg-primary-subtle text-secondary">
-                <div class="card-body text-center">
-                <i class="fa fa-solid fa-cloud-arrow-up" style="font-size:90px"></i>
+                <div class="card-body text-center" style="height: 25rem">
+                <i class="fa-solid fa-cloud-arrow-up" style="font-size:90px"></i>
                     <h4>Data Pengguna Hosting</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
-
+                        Berisi informasi mengenai pengguna yang menggunakan layanan Hosting di PT. Teknologi Server Indonesia.
                     </p>
-                    <button type="button" class="btn btn-primary">Selengkapnya</button>
+                    <a href="DataPenggunaHosting.php">
+                    <button type="button" class="btn btn-primary" style="position: absolute; top: 300px; left: 50px; right: 50px;">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-lg">
             <div class="card bg-danger-subtle text-secondary">
-                <div class="card-body text-center">
+                <div class="card-body text-center" style="height: 25rem">
                 <i class="fa fa-server" style="font-size:90px"></i>
                     <h4>Data Pengguna VPS</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
+                        Berisi informasi mengenai pengguna yang menggunakan layanan VPS di PT. Teknologi Server Indonesia.
 
                     </p>
-                    <button type="button" class="btn btn-danger">Selengkapnya</button>
+                    <a href="DataPenggunaVPS.php">
+                    <button  href="DataPenggunaVPS.php" type="button" class="btn btn-danger" style="position: absolute; top: 300px; left: 50px; right: 50px;">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-lg">
             <div class="card bg-warning-subtle text-secondary">
-                <div class="card-body text-center">
+                <div class="card-body text-center" style="height: 25rem">
                 <i class="fa fa-user" style="font-size:90px"></i>
                     <h4>Data Pengunjung</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
+                        Berisi informasi mengenai pengunjung di PT. Teknologi Server Indonesia.
 
                     </p>
-                    <button type="button" class="btn btn-warning">Selengkapnya</button>
+                    <a href="DataPengunjung.php">
+                    <button href="DataPengunjung.php" type="button" class="btn btn-warning" style="position: absolute; top: 300px; left: 50px; right: 50px;">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-lg">
             <div class="card bg-success-subtle text-secondary">
-                <div class="card-body text-center">
+                <div class="card-body text-center" style="height: 25rem">
                 <i class='fas fa-person-chalkboard' style='font-size:90px'></i>
                     <h4>Data Pengajar</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus ex et nobis rem! Esse soluta, consequatur obcaecati culpa similique iste eius tenetur tempore sit dicta at aperiam id minima.
+                        Berisi informasi mengenai pengajar di PT. Teknologi Server Indonesia.
 
                     </p>
-                    <button type="button" class="btn btn-success">Selengkapnya</button>
+                    <a href="DataPengajar.php">
+                    <button href="DataPengajar.php" type="button" class="btn btn-success" style="position: absolute; top: 300px; left: 50px; right: 50px;">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>

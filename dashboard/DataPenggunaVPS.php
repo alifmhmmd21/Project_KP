@@ -89,7 +89,7 @@ $query = mysqli_query($conn, $sql1);
             </div>
         </header>
         <div class="w3-container">
-            <h1 class="w3-center" style="font-family: 'Inter', sans-serif;">Data Pengguna Hosting</h1>
+            <h1 class="w3-center" style="font-family: 'Inter', sans-serif;">Data Pengguna VPS</h1>
         </div>
 
         <div class="container-fluid">
