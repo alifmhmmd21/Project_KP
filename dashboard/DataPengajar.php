@@ -5,11 +5,8 @@ include("../quer/config.php");
 include("../login/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
-$batas = 5;
-$halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
-$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-$previous = $halaman - 1;
-$next = $halaman + 1;
+$sqltambahan = "";
+$per_halaman = 5;
 
 //Search Bar Start
 if ($katakunci != '') {
