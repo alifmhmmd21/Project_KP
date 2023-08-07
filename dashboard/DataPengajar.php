@@ -105,7 +105,8 @@ $nomor = $halaman_awal + 1;
                                     <div class="col-sm-4">
                                         <div class="text-right">
                                             <a href="#tambah-teks" class="btn btn-success" data-toggle="modal"
-                                                style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -50px;"><i class="material-icons">&#xE147;</i>
+                                                style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -45px;"><i 
+                                                    class="material-icons">&#xE147;</i>
                                                 <span>Tambah</span></a>
                                         </div>
                                     </div>
@@ -177,27 +178,24 @@ $nomor = $halaman_awal + 1;
                                 </tr>
                             </tbody>
                         </table>
-                        <nav>
+                        <!--Pagination (awal)-->
+                        <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($halaman > 1) {
-                                        echo "href='?halaman=$previous'";
-                                    } ?>>Previous</a>
-                                </li>
                                 <?php
-                                for ($x = 1; $x <= $total_halaman; $x++) {
+                                
+                                $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
+                                for ($i = 1; $i <= $pages; $i++) {
                                     ?>
-                                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="DataPenggunaVPS.php?katakunci=<?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                    </li>
                                     <?php
                                 }
                                 ?>
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($halaman < $total_halaman) {
-                                        echo "href='?halaman=$next'";
-                                    } ?>>Next</a>
-                                </li>
                             </ul>
                         </nav>
+                        <!--Pagination (akhir)-->
                     </div>
                 </div>
             </div>

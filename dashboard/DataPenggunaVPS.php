@@ -60,8 +60,8 @@ $query = mysqli_query($conn, $sql1);
 
 <body>
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
-        style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="font-family: 'Inter', sans-serif;"
+        id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
@@ -72,7 +72,7 @@ $query = mysqli_query($conn, $sql1);
 
     </div>
 
-    <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
+    <div id="main" style="font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
                 <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
@@ -97,7 +97,7 @@ $query = mysqli_query($conn, $sql1);
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <div class="table-title">
-                            
+
                             <!--Search bar -->
                         </div>
                         <form>
@@ -117,9 +117,10 @@ $query = mysqli_query($conn, $sql1);
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
-                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -40px;"><i class="material-icons">&#xE147;</i>
-                                        <span>Tambah</span></a>
+                                        <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
+                                            style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -40px;"><i
+                                                class="material-icons">&#xE147;</i>
+                                            <span>Tambah</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -179,34 +180,25 @@ $query = mysqli_query($conn, $sql1);
                                 </tr>
                             </tbody>
                         </table>
-
+                        
+                        <!--Pagination (awal)-->
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($page > 1) {
-                                        echo "href='?page=$previous'";
-                                    } ?>>Previous</a>
-                                </li>
                                 <?php
-                                //Pagination (awal)
+                                
                                 $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
                                 for ($i = 1; $i <= $pages; $i++) {
                                     ?>
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="DataPenggunaVPS.php?katakunci= <?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                            href="DataPenggunaVPS.php?katakunci=<?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
                                     </li>
                                     <?php
                                 }
-                                //Pagination (akhir)
                                 ?>
-                                <li class="page-item">
-                                    <a class="page-link" <?php if ($page < $pages) {
-                                        echo "href='?page=$next'";
-                                    } ?>>Next</a>
-                                </li>
                             </ul>
                         </nav>
+                        <!--Pagination (akhir)-->
 
                     </div>
                 </div>
