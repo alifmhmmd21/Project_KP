@@ -57,8 +57,8 @@ $query = mysqli_query($conn, $sql1);
 
 <body style="font-family: 'Inter', sans-serif;">
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
-        style="display:block; width: 18% ;font-family: 'Inter', sans-serif;" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="font-family: 'Inter', sans-serif;"
+        id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
         <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
@@ -67,7 +67,7 @@ $query = mysqli_query($conn, $sql1);
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
     </div>
 
-    <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
+    <div id="main" style="font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
                 <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
@@ -112,10 +112,10 @@ $query = mysqli_query($conn, $sql1);
                                         </a>
                                     </div>
                                     <div class="col-sm-4">
-                                    <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
-                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -60px;"><i 
-                                            class="material-icons">&#xE147;</i>
-                                        <span>Tambah</span></a>
+                                        <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
+                                            style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -60px;"><i
+                                                class="material-icons">&#xE147;</i>
+                                            <span>Tambah</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@ $query = mysqli_query($conn, $sql1);
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
                                 <?php
-                                
+
                                 $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
                                 for ($i = 1; $i <= $pages; $i++) {
                                     ?>
@@ -208,7 +208,8 @@ $query = mysqli_query($conn, $sql1);
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
@@ -217,12 +218,13 @@ $query = mysqli_query($conn, $sql1);
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="alamat"
-                                        id="alamat" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="alamat" id="alamat"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nohp" id="nohp" required>
+                                    <input type="text" autocomplete="off" class="form-control" name="nohp" id="nohp"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label>Tujuan Kunjungan</label>

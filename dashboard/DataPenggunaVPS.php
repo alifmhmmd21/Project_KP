@@ -178,12 +178,12 @@ $query = mysqli_query($conn, $sql1);
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <!--Pagination (awal)-->
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
                                 <?php
-                                
+
                                 $cari = (isset($_GET['cari'])) ? $_GET['cari'] : "";
                                 for ($i = 1; $i <= $pages; $i++) {
                                     ?>
