@@ -1,4 +1,7 @@
 <?php
+$sukses     = "";
+$error      = "";
+
 include("../quer/config.php");
 
 if (isset($_GET['id'])) {
@@ -8,25 +11,25 @@ if (isset($_GET['id'])) {
 }
 
 if ($id != "") {
-    $sql1 = "select * from penggunahosting where id='$id'";
-    $q1 = mysqli_query($conn, $sql1);
-    $r1 = mysqli_fetch_array($q1);
-    $ktp = $r1['ktp'];
-    $nama = $r1['nama'];
-    $alamat = $r1['alamat'];
-    $hp = $r1['hp'];
-    $subdomain = $r1['subdomain'];
-    $domain = $r1['domain'];
+    $sql1       = "select * from penggunahosting where id='$id'";
+    $q1         = mysqli_query($conn, $sql1);
+    $r1         = mysqli_fetch_array($q1);
+    $ktp        = $r1['ktp'];
+    $nama       = $r1['nama'];
+    $alamat     = $r1['alamat'];
+    $hp         = $r1['hp'];
+    $subdomain  = $r1['subdomain'];
+    $domain     = $r1['domain'];
 
 }
 
 if (isset($_POST['simpan'])) {
-    $ktp = $_POST['ktp'];
-    $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $hp = $_POST['hp'];
-    $subdomain = $_POST['subdomain'];
-    $domain = $_POST['domain'];
+    $ktp        = $_POST['ktp'];
+    $nama       = $_POST['nama'];
+    $alamat     = $_POST['alamat'];
+    $hp         = $_POST['hp'];
+    $subdomain  = $_POST['subdomain'];
+    $domain     = $_POST['domain'];
 
     if (empty($error)) {
         if ($id != "") {
@@ -34,10 +37,9 @@ if (isset($_POST['simpan'])) {
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
-            header('location:../dashboard/DataPenggunaHosting.php');
+            $sukses = "Data berhasil diupdate";
         } else {
-            header("location:../edit/edit_penggunahosting.php?id");
-
+            $error  = "Data gagal diupdate";
         }
     }
 }
@@ -64,9 +66,29 @@ if (isset($_POST['simpan'])) {
                         <h2 class="modal-title">Edit Data Pengguna Hosting</h>
                     </div>
                     <div class="modal-body">
+                        <?php
+                            if ($error) {
+                            ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $error ?>
+                                </div>
+
+                            <?php
+                            }
+                            ?>
+
+                            <?php
+                            if ($sukses) {
+                            ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $sukses ?>
+                                </div>
+                            <?php
+                            }
+                        ?>
                         <div class="form-group">
                             <label>No KTP</label>
-                            <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="noktp"
+                            <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="ktp"
                                 maxlength="16" required>
                         </div>
                         <div class="form-group">
@@ -81,7 +103,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="nohp">
+                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="hp">
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>
