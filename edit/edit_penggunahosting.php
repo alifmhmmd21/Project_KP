@@ -30,7 +30,7 @@ if (isset($_POST['simpan'])) {
 
     if (empty($error)) {
         if ($id != "") {
-            $sql1 = "update penggunavps set ktp ='$ktp',nama = '$nama',alamat = '$alamat', hp = '$hp', subdomain='$subdomain',domain='$domain' where id = '$id'";
+            $sql1 = "update penggunahosting set ktp ='$ktp',nama = '$nama',alamat = '$alamat', hp = '$hp', subdomain='$subdomain',domain='$domain' where id = '$id'";
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
@@ -95,7 +95,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="../dashboard/DataPenggunaVPS.php">
+                        <a href="../dashboard/DataPenggunaHosting.php">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </a>
                         <input type="submit" class="btn btn-success" name="simpan" value="Simpan Data">
