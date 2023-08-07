@@ -67,9 +67,6 @@ $query = mysqli_query($conn, $sql1);
         <a href="DataPengunjung.php" class="w3-bar-item w3-button">Data Pengunjung</a>
         <a href="DataPengajar.php" class="w3-bar-item w3-button">Data Pengajar</a>
     </div>
-
-    </div>
-
     <div id="main" style="font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
