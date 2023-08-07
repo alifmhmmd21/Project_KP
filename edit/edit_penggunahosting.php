@@ -31,6 +31,10 @@ if (isset($_POST['simpan'])) {
     $subdomain  = $_POST['subdomain'];
     $domain     = $_POST['domain'];
 
+    if ($ktp == '' or $nama == '' or $alamat == '' or $hp == '' or $subdomain == '' or $domain == '') {
+        $error = "Silahkan masukan semua data yang diperlukan";
+    }
+
     if (empty($error)) {
         if ($id != "") {
             $sql1 = "update penggunahosting set ktp ='$ktp',nama = '$nama',alamat = '$alamat', hp = '$hp', subdomain='$subdomain',domain='$domain' where id = '$id'";
