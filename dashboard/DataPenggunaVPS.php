@@ -8,6 +8,7 @@ $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
 $per_halaman = 5;
 
+//Search Bar Start
 if ($katakunci != '') {
     $array_katakunci = explode(" ", $katakunci);
     for ($x = 0; $x < count($array_katakunci); $x++) {
@@ -15,8 +16,9 @@ if ($katakunci != '') {
     }
     $sqltambahan = " where" . implode(" or", $sqlcari);
 }
-//
+//Search Bar End
 
+//Show Data Start
 $sql1 = "select * from penggunavps $sqltambahan";
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
@@ -25,12 +27,8 @@ $total = mysqli_num_rows($q1);
 $pages = ceil($total / $per_halaman);
 $nomor = $mulai + 1;
 $sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
-//
-$previous = $page - 1;
-$next = $page + 1;
-
 $query = mysqli_query($conn, $sql1);
-
+//Show Data End
 
 ?>
 
