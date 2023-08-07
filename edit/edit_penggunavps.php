@@ -1,4 +1,7 @@
 <?php
+$sukses     = "";
+$error      = "";
+
 include("../quer/config.php");
 
 if (isset($_GET['id'])) {
@@ -34,10 +37,9 @@ if (isset($_POST['simpan'])) {
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
-            header('location:../dashboard/DataPenggunaVPS.php');
+            $sukses = "Data berhasil diupdate";
         } else {
-            header("location:../edit/edit_penggunavps.php?id");
-
+            $error  = "Data gagal diupdate";
         }
     }
 }
@@ -52,6 +54,7 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/177f980250.js" crossorigin="anonymous"></script>
     <title>Edit Data</title>
 </head>
 
@@ -60,13 +63,36 @@ if (isset($_POST['simpan'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
+                    <a href="../dashboard/DataPenggunaVPS.php">
+                        <i class="fa fa-solid fa-circle-xmark" style="float: right; display: flex; align-items: flex-end; position: absolute; top: 20px; right: 20px; font-size:25px; color:#ff0000;"></i>     
+                    </a>
                     <div class="modal-header">
                         <h2 class="modal-title">Edit Data Pengguna VPS</h>
                     </div>
                     <div class="modal-body">
+                    <?php
+                            if ($error) {
+                            ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $error ?>
+                                </div>
+
+                            <?php
+                            }
+                            ?>
+
+                            <?php
+                            if ($sukses) {
+                            ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $sukses ?>
+                                </div>
+                            <?php
+                            }
+                        ?>
                         <div class="form-group">
                             <label>No KTP</label>
-                            <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="noktp"
+                            <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="ktp"
                                 maxlength="16" required>
                         </div>
                         <div class="form-group">
@@ -77,21 +103,21 @@ if (isset($_POST['simpan'])) {
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="text" id="alamat" class="form-control" value="<?php echo $alamat ?>"
-                                name="alamat">
+                                name="alamat" required>
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="nohp">
+                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="hp" required>
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>
                             <input type="text" class="form-control" id="subdomain" value="<?php echo $subdomain ?>"
-                                name="subdomain">
+                                name="subdomain" required>
                         </div>
                         <div class="form-group">
                             <label>Domain</label>
                             <input type="text" class="form-control" id="domain" value="<?php echo $domain ?>"
-                                name="domain">
+                                name="domain" required>
                         </div>
                     </div>
                     <div class="modal-footer">

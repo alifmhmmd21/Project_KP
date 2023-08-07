@@ -213,26 +213,26 @@ $nomor = $halaman_awal + 1;
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Nama</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama">
+                                    <input type="text" autocomplete="off" class="form-control" name="nama" id="nama" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor KTP</label>
                                     <input type="text" autocomplete="off" class="form-control" name="noktp" id="noktp"
-                                        maxlength="16">
+                                        maxlength="16" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
                                     <input type="text" autocomplete="off" class="form-control" name="alamat"
-                                        id="alamat">
+                                        id="alamat" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input type="text" autocomplete="off" class="form-control" name="nohp" id="nohp">
+                                    <input type="text" autocomplete="off" class="form-control" name="nohp" id="nohp" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Tujuan Kunjungan</label>
                                     <textarea name="pesan" autocomplete="off" class="form-control" id="pesan" cols="30"
-                                        rows="4"></textarea>
+                                        rows="4" required></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -31,9 +31,6 @@ if (isset($_POST['simpan'])) {
     $subdomain  = $_POST['subdomain'];
     $domain     = $_POST['domain'];
 
-    if ($ktp == '' or $nama == '' or $alamat == '' or $hp == '' or $subdomain == '' or $domain == '') {
-        $error = "Silahkan masukan semua data yang diperlukan";
-    }
 
     if (empty($error)) {
         if ($id != "") {
@@ -58,6 +55,7 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/177f980250.js" crossorigin="anonymous"></script>
     <title>Edit Data</title>
 </head>
 
@@ -66,6 +64,9 @@ if (isset($_POST['simpan'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
+                    <a href="../dashboard/DataPenggunaHosting.php">
+                        <i class="fa fa-solid fa-circle-xmark" style="float: right; display: flex; align-items: flex-end; position: absolute; top: 20px; right: 20px; font-size:25px; color:#ff0000;"></i>     
+                    </a>
                     <div class="modal-header">
                         <h2 class="modal-title">Edit Data Pengguna Hosting</h>
                     </div>
@@ -107,7 +108,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="nohp">
+                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="hp">
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>

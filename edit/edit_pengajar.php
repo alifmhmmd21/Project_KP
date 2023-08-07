@@ -31,10 +31,6 @@ if (isset($_POST['simpan'])) {
     $address = $_POST['address'];
     $materi = $_POST['materi'];
 
-    if ($name ==''or $email =='' or $phone =='' or $address =='' or $materi =='') {
-        $error = "Silahkan masukan semua data yang diperlukan";
-    }
-
     if (empty($error)) {
         if ($id != "") {
             $sql1 = "update pengajars set name ='$name',email = '$email',phone = '$phone', address = '$address', materi='$materi' where id = '$id'";
@@ -92,26 +88,26 @@ if (isset($_POST['simpan'])) {
                         ?>
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="name" value="<?php echo $name ?>" name="name">
+                            <input type="text" class="form-control" id="name" value="<?php echo $name ?>" name="name" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
                             <input type="text" class="form-control" id="email" value="<?php echo $email ?>"
-                                name="email">
+                                name="email" required>
                         </div>
                         <div class="form-group">
                             <label>No. HP</label>
-                            <input type="text" id="phone" class="form-control" value="<?php echo $phone ?>" name="phone">
+                            <input type="text" id="phone" class="form-control" value="<?php echo $phone ?>" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="text" class="form-control" id="address" value="<?php echo $address ?>"
-                                name="address">
+                                name="address" required>
                         </div>
                         <div class="form-group">
                             <label>Materi</label>
                             <input type="text" class="form-control" id="materi" value="<?php echo $materi ?>"
-                                name="materi">
+                                name="materi" required>
                         </div>
                     </div>
                     <div class="modal-footer">
