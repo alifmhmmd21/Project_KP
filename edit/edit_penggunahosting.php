@@ -77,21 +77,22 @@ if (isset($_POST['simpan'])) {
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="text" id="alamat" class="form-control" value="<?php echo $alamat ?>"
-                                name="alamat">
+                                name="alamat" required>
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="nohp">
+                            <input type="tel" class="form-control" id="hp" maxlength="12" required
+                                value="<?php echo $hp ?>" name="nohp" required>
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>
                             <input type="text" class="form-control" id="subdomain" value="<?php echo $subdomain ?>"
-                                name="subdomain">
+                                name="subdomain" required>
                         </div>
                         <div class="form-group">
                             <label>Domain</label>
                             <input type="text" class="form-control" id="domain" value="<?php echo $domain ?>"
-                                name="domain">
+                                name="domain" required>
                         </div>
                     </div>
                     <div class="modal-footer">
