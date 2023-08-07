@@ -1,4 +1,7 @@
 <?php
+$sukses     = "";
+$error      = "";
+
 include("../quer/config.php");
 
 $sukses     ="";
@@ -14,24 +17,24 @@ if (isset($_GET['id'])) {
 
 if ($id != "") {
     $sql1 = "select * from penggunavps where id='$id'";
-    $q1 = mysqli_query($conn, $sql1);
-    $r1 = mysqli_fetch_array($q1);
-    $ktp = $r1['ktp'];
-    $nama = $r1['nama'];
-    $alamat = $r1['alamat'];
-    $hp = $r1['hp'];
-    $subdomain = $r1['subdomain'];
-    $domain = $r1['domain'];
+    $q1         = mysqli_query($conn, $sql1);
+    $r1         = mysqli_fetch_array($q1);
+    $ktp        = $r1['ktp'];
+    $nama       = $r1['nama'];
+    $alamat     = $r1['alamat'];
+    $hp         = $r1['hp'];
+    $subdomain  = $r1['subdomain'];
+    $domain     = $r1['domain'];
 
 }
 
 if (isset($_POST['simpan'])) {
-    $ktp = $_POST['ktp'];
-    $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $hp = $_POST['hp'];
-    $subdomain = $_POST['subdomain'];
-    $domain = $_POST['domain'];
+    $ktp        = $_POST['ktp'];
+    $nama       = $_POST['nama'];
+    $alamat     = $_POST['alamat'];
+    $hp         = $_POST['hp'];
+    $subdomain  = $_POST['subdomain'];
+    $domain     = $_POST['domain'];
 
     if (empty($error)) {
         if ($id != "") {
@@ -56,6 +59,7 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/177f980250.js" crossorigin="anonymous"></script>
     <title>Edit Data</title>
 </head>
 
@@ -64,30 +68,13 @@ if (isset($_POST['simpan'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
+                    <a href="../dashboard/DataPenggunaVPS.php">
+                        <i class="fa fa-solid fa-circle-xmark" style="float: right; display: flex; align-items: flex-end; position: absolute; top: 20px; right: 20px; font-size:25px; color:#ff0000;"></i>     
+                    </a>
                     <div class="modal-header">
                         <h2 class="modal-title">Edit Data Pengguna VPS</h>
                     </div>
                     <div class="modal-body">
-                    <?php
-                        if ($error) {
-                        ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo $error ?>
-                            </div>
-
-                        <?php
-                        }
-                        ?>
-
-                        <?php
-                        if ($sukses) {
-                        ?>
-                            <div class="alert alert-success" role="alert">
-                                <?php echo $sukses ?>
-                            </div>
-                        <?php
-                        }
-                        ?>
                         <div class="form-group">
                             <label>No KTP</label>
                             <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="ktp"
@@ -101,7 +88,7 @@ if (isset($_POST['simpan'])) {
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="text" id="alamat" class="form-control" value="<?php echo $alamat ?>"
-                                name="alamat">
+                                name="alamat" required>
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
@@ -110,12 +97,12 @@ if (isset($_POST['simpan'])) {
                         <div class="form-group">
                             <label>SubDomain</label>
                             <input type="text" class="form-control" id="subdomain" value="<?php echo $subdomain ?>"
-                                name="subdomain">
+                                name="subdomain" required>
                         </div>
                         <div class="form-group">
                             <label>Domain</label>
                             <input type="text" class="form-control" id="domain" value="<?php echo $domain ?>"
-                                name="domain">
+                                name="domain" required>
                         </div>
                     </div>
                     <div class="modal-footer">

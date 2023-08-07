@@ -18,6 +18,7 @@ if ($katakunci != '') {
 }
 //Search Bar End
 
+//Show Data Start
 $sql1 = "select * from penggunavps $sqltambahan";
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
@@ -27,7 +28,6 @@ $pages = ceil($total / $per_halaman);
 $nomor = $mulai + 1;
 $sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
 $query = mysqli_query($conn, $sql1);
-//Show Data End
 
 
 ?>
