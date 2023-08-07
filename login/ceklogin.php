@@ -18,7 +18,7 @@ if ($cek > 0) {
 	$db_user = $data['username'];
 	$db_pass = $data['password'];
 	$_SESSION['id'] = $db_id;
-	header("location:../dashboard/DataPenggunaVPS.php");
+	header("location:../dashboard/Home.php");
 
 } elseif ($login != $user && $pass) {
 	header("location:login.php?pesan=gagal");

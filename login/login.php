@@ -5,7 +5,7 @@ include("../quer/config.php");
 
 session_start();
 if (isset($_SESSION['id']) != '') {
-	header("location:../dashboard/DataPenggunaVPS.php");
+	header("location:../dashboard/Home.php");
 	exit();
 }
 ?>
