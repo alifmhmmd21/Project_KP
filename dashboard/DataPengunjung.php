@@ -5,18 +5,29 @@ include("../quer/config.php");
 include("../login/pengecekanlogin.php");
 
 $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
-$batas = 5;
-$halaman = isset($_GET['halaman']) ? (int) $_GET['halaman'] : 1;
-$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-$previous = $halaman - 1;
-$next = $halaman + 1;
+$sqltambahan = "";
+$per_halaman = 5;
 
-$data = mysqli_query($conn, "select * from visiter");
-$jumlah_data = mysqli_num_rows($data);
-$total_halaman = ceil($jumlah_data / $batas);
+//Search Bar Start
+if ($katakunci != '') {
+    $array_katakunci = explode(" ", $katakunci);
+    for ($x = 0; $x < count($array_katakunci); $x++) {
+        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
+    }
+    $sqltambahan = " where" . implode(" or", $sqlcari);
+}
+//Search Bar End
 
-$query = mysqli_query($conn, "select * from visiter limit $halaman_awal, $batas");
-$nomor = $halaman_awal + 1;
+$sql1 = "select * from visiter $sqltambahan";
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;
+$q1 = mysqli_query($conn, $sql1);
+$total = mysqli_num_rows($q1);
+$pages = ceil($total / $per_halaman);
+$nomor = $mulai + 1;
+$sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
+$query = mysqli_query($conn, $sql1);
+//Show Data End
 
 ?>
 
@@ -102,7 +113,7 @@ $nomor = $halaman_awal + 1;
                                     </div>
                                     <div class="col-sm-4">
                                     <a href="#tambah-teks" class="btn btn-success " data-toggle="modal"
-                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -40px;"><i 
+                                        style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -60px;"><i 
                                             class="material-icons">&#xE147;</i>
                                         <span>Tambah</span></a>
                                     </div>
@@ -124,20 +135,6 @@ $nomor = $halaman_awal + 1;
                             </thead>
                             <tbody>
                                 <?php
-                                //keyword search
-                                $sqltambahan = "";
-                                if ($katakunci != '') {
-                                    $array_katakunci = explode(" ", $katakunci);
-                                    for ($x = 0; $x < count($array_katakunci); $x++) {
-                                        $sqlcari[] = "(no_ktp like '%" . $array_katakunci[$x] . "%' or nama like '%" . $array_katakunci[$x] . "%' or no_hp like '%" . $array_katakunci[$x] . "%')";
-                                    }
-                                    $sqltambahan = " where" . implode(" or", $sqlcari);
-                                }
-                                $sql1 = "select * from visiter $sqltambahan";
-                                $q1 = mysqli_query($conn, $sql1);
-                                $total = mysqli_num_rows($q1);
-                                $sql1 = $sql1 . " order by id desc limit $halaman_awal,$batas";
-                                $query = mysqli_query($conn, $sql1);
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     ?>
                                     <tr>
@@ -184,7 +181,7 @@ $nomor = $halaman_awal + 1;
                                     ?>
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="DataPenggunaVPS.php?katakunci=<?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                                            href="DataPengunjung.php?katakunci=<?php echo $katakunci ?>&cari=<?php echo $cari ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
                                     </li>
                                     <?php
                                 }

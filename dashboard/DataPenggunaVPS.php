@@ -8,6 +8,7 @@ $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
 $sqltambahan = "";
 $per_halaman = 5;
 
+//Search Bar Start
 if ($katakunci != '') {
     $array_katakunci = explode(" ", $katakunci);
     for ($x = 0; $x < count($array_katakunci); $x++) {
@@ -15,7 +16,7 @@ if ($katakunci != '') {
     }
     $sqltambahan = " where" . implode(" or", $sqlcari);
 }
-//
+//Search Bar End
 
 $sql1 = "select * from penggunavps $sqltambahan";
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
@@ -25,11 +26,8 @@ $total = mysqli_num_rows($q1);
 $pages = ceil($total / $per_halaman);
 $nomor = $mulai + 1;
 $sql1 = $sql1 . " order by id desc limit $mulai,$per_halaman";
-//
-$previous = $page - 1;
-$next = $page + 1;
-
 $query = mysqli_query($conn, $sql1);
+//Show Data End
 
 
 ?>
@@ -118,7 +116,7 @@ $query = mysqli_query($conn, $sql1);
                                     </div>
                                     <div class="col-sm-4">
                                         <a href="#tambah-teks" class="btn btn-success align-center" data-toggle="modal"
-                                            style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -40px;"><i
+                                            style="float: right; display: flex; align-items: flex-end; position: absolute; top: 0; right: -60px;"><i
                                                 class="material-icons">&#xE147;</i>
                                             <span>Tambah</span></a>
                                     </div>
