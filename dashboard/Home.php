@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+include("../login/pengecekanlogin.php");
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
