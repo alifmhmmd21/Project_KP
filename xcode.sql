@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Agu 2023 pada 05.21
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Aug 07, 2023 at 04:47 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajars`
+-- Table structure for table `pengajars`
 --
 
 CREATE TABLE `pengajars` (
@@ -57,7 +57,7 @@ CREATE TABLE `pengajars` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pengajars`
+-- Dumping data for table `pengajars`
 --
 
 INSERT INTO `pengajars` (`id`, `name`, `email`, `phone`, `address`, `materi`, `created_at`) VALUES
@@ -65,13 +65,37 @@ INSERT INTO `pengajars` (`id`, `name`, `email`, `phone`, `address`, `materi`, `c
 (6, 'faiz', 'faiz@gmail.com', 123456, 'Semarang', 'designer', '2023-07-17 11:25:46'),
 (25, 'kakai', 'muhammadkaisan3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-23 01:56:08'),
 (29, 'Rizky', 'Dhiyarizqi3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Jaringan nirkabel', '2023-07-28 13:25:54'),
-(31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18');
-
+(31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18'),
+(36, ' Kaisan Ridwan1', ' Muhammadkaisan3@gmail.com', 2147483647, ' Jl. Langgar Gg. H. Toncit 1 No 21', ' Back end', '2023-08-03 14:05:15');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penggunavps`
+-- Table structure for table `penggunahosting`
+--
+
+CREATE TABLE `penggunahosting` (
+  `ktp` bigint(16) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `hp` bigint(12) NOT NULL,
+  `subdomain` varchar(100) NOT NULL,
+  `domain` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `penggunahosting`
+--
+
+INSERT INTO `penggunahosting` (`ktp`, `nama`, `alamat`, `hp`, `subdomain`, `domain`, `id`) VALUES
+(337499910120004, 'Faizpakez', '0', 81568590381, 'xcode', 'nasihosting', 1),
+(33741919181919, 'Ziaf', 'Jalan Semarang Raya Sebelah Masjid Agung', 85618749187, 'xcode', 'nasihosting', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penggunavps`
 --
 
 CREATE TABLE `penggunavps` (
@@ -85,18 +109,19 @@ CREATE TABLE `penggunavps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `penggunavps`
+-- Dumping data for table `penggunavps`
 --
 
 INSERT INTO `penggunavps` (`ktp`, `nama`, `alamat`, `hp`, `subdomain`, `domain`, `id`) VALUES
 (337311111, 'raven', 'salatiga', 8151234567, 'subdomainraven', 'domainraven', 22),
 (3312345678, 'kakai', 'jakarta', 85751, 'subdomaincek', 'domaincek', 23),
-(123123123, 'ceknama', 'cekalamat', 85751123, 'ceksubdomain', 'cekdomain', 24);
+(123123123, 'ceknama', 'cekalamat', 85751123, 'ceksubdomain', 'cekdomain', 24),
+(123123123, 'ceknama', 'cekalamat', 67726718927, 'cek subdomain', 'cek domain', 25);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `visiter`
+-- Table structure for table `visiter`
 --
 
 CREATE TABLE `visiter` (
@@ -109,7 +134,7 @@ CREATE TABLE `visiter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `visiter`
+-- Dumping data for table `visiter`
 --
 
 INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALUES
@@ -121,65 +146,76 @@ INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALU
 (26, 41213123, '  Halo', 'dafwefwev', 213412321, 'tujuan kami berkunjung untuk mengikat tali silaturahim'),
 (28, 0, 'Raven Fajar Febriano', 'Jl. salatiga no 54 rt rw 04 06 salatiga', 0, ''),
 (31, 38989228, 'Kaisan', 'Jl. berkah', 2147483647, 'kerjasama'),
-(33, 231213123, 'kaisan', '21313123132', 12313123, '1321312312');
+(33, 231213123, 'kaisan', '21313123132', 12313123, '1321312312'),
+(35, 1231231423, ' raven', 'gang slamet', 2147483647, ' nagabsjsijennshhnehshjenns');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pengajars`
+-- Indexes for table `pengajars`
 --
 ALTER TABLE `pengajars`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `penggunahosting`
+--
+ALTER TABLE `penggunahosting`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `penggunavps`
+-- Indexes for table `penggunavps`
 --
 ALTER TABLE `penggunavps`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `visiter`
+-- Indexes for table `visiter`
 --
 ALTER TABLE `visiter`
-  ADD PRIMARY KEY (`id`),
-
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `pengajars`
+-- AUTO_INCREMENT for table `pengajars`
 --
 ALTER TABLE `pengajars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT untuk tabel `penggunavps`
+-- AUTO_INCREMENT for table `penggunahosting`
+--
+ALTER TABLE `penggunahosting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `penggunavps`
 --
 ALTER TABLE `penggunavps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `visiter`
+-- AUTO_INCREMENT for table `visiter`
 --
 ALTER TABLE `visiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
