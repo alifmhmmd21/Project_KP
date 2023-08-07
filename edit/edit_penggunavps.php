@@ -4,6 +4,11 @@ $error      = "";
 
 include("../quer/config.php");
 
+$sukses     ="";
+$error      ="";
+
+
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
@@ -33,7 +38,7 @@ if (isset($_POST['simpan'])) {
 
     if (empty($error)) {
         if ($id != "") {
-            $sql1 = "update penggunavps set ktp ='$ktp',nama = '$nama',alamat = '$alamat', hp = '$hp', subdomain='$subdomain',domain='$domain' where id = '$id'";
+            $sql1 ="update penggunavps set ktp='$ktp',nama='$nama',alamat='$alamat', hp='$hp',subdomain='$subdomain',domain='$domain' where id = '$id'";
         }
         $q1 = mysqli_query($conn, $sql1);
         if ($q1) {
@@ -70,26 +75,6 @@ if (isset($_POST['simpan'])) {
                         <h2 class="modal-title">Edit Data Pengguna VPS</h>
                     </div>
                     <div class="modal-body">
-                    <?php
-                            if ($error) {
-                            ?>
-                                <div class="alert alert-danger" role="alert">
-                                    <?php echo $error ?>
-                                </div>
-
-                            <?php
-                            }
-                            ?>
-
-                            <?php
-                            if ($sukses) {
-                            ?>
-                                <div class="alert alert-success" role="alert">
-                                    <?php echo $sukses ?>
-                                </div>
-                            <?php
-                            }
-                        ?>
                         <div class="form-group">
                             <label>No KTP</label>
                             <input type="number" class="form-control" id="ktp" value="<?php echo $ktp ?>" name="ktp"
@@ -107,7 +92,7 @@ if (isset($_POST['simpan'])) {
                         </div>
                         <div class="form-group">
                             <label>Nomor HP</label>
-                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="hp" required>
+                            <input type="tel" class="form-control" id="hp" value="<?php echo $hp ?>" name="nohp">
                         </div>
                         <div class="form-group">
                             <label>SubDomain</label>
