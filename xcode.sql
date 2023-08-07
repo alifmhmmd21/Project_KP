@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Agu 2023 pada 05.21
+-- Waktu pembuatan: 07 Agu 2023 pada 04.39
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -65,8 +65,8 @@ INSERT INTO `pengajars` (`id`, `name`, `email`, `phone`, `address`, `materi`, `c
 (6, 'faiz', 'faiz@gmail.com', 123456, 'Semarang', 'designer', '2023-07-17 11:25:46'),
 (25, 'kakai', 'muhammadkaisan3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-23 01:56:08'),
 (29, 'Rizky', 'Dhiyarizqi3@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'Jaringan nirkabel', '2023-07-28 13:25:54'),
-(31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18');
-
+(31, 'Syifa', 'Syifaalya@gmail.com', 2147483647, 'Jl. Langgar Gg. H. Toncit 1 No 21', 'designer', '2023-07-28 13:32:18'),
+(36, ' Kaisan Ridwan1', ' Muhammadkaisan3@gmail.com', 2147483647, ' Jl. Langgar Gg. H. Toncit 1 No 21', ' Back end', '2023-08-03 14:05:15');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,8 @@ CREATE TABLE `penggunavps` (
 INSERT INTO `penggunavps` (`ktp`, `nama`, `alamat`, `hp`, `subdomain`, `domain`, `id`) VALUES
 (337311111, 'raven', 'salatiga', 8151234567, 'subdomainraven', 'domainraven', 22),
 (3312345678, 'kakai', 'jakarta', 85751, 'subdomaincek', 'domaincek', 23),
-(123123123, 'ceknama', 'cekalamat', 85751123, 'ceksubdomain', 'cekdomain', 24);
+(123123123, 'ceknama', 'cekalamat', 85751123, 'ceksubdomain', 'cekdomain', 24),
+(123123123, 'ceknama', 'cekalamat', 67726718927, 'cek subdomain', 'cek domain', 25);
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,8 @@ INSERT INTO `visiter` (`id`, `no_ktp`, `nama`, `alamat`, `no_hp`, `tujuan`) VALU
 (26, 41213123, '  Halo', 'dafwefwev', 213412321, 'tujuan kami berkunjung untuk mengikat tali silaturahim'),
 (28, 0, 'Raven Fajar Febriano', 'Jl. salatiga no 54 rt rw 04 06 salatiga', 0, ''),
 (31, 38989228, 'Kaisan', 'Jl. berkah', 2147483647, 'kerjasama'),
-(33, 231213123, 'kaisan', '21313123132', 12313123, '1321312312');
+(33, 231213123, 'kaisan', '21313123132', 12313123, '1321312312'),
+(35, 1231231423, ' raven', 'gang slamet', 2147483647, ' nagabsjsijennshhnehshjenns');
 
 --
 -- Indexes for dumped tables
@@ -139,7 +141,6 @@ ALTER TABLE `admin`
 ALTER TABLE `pengajars`
   ADD PRIMARY KEY (`id`);
 
-
 --
 -- Indeks untuk tabel `penggunavps`
 --
@@ -150,8 +151,7 @@ ALTER TABLE `penggunavps`
 -- Indeks untuk tabel `visiter`
 --
 ALTER TABLE `visiter`
-  ADD PRIMARY KEY (`id`),
-
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -167,19 +167,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `pengajars`
 --
 ALTER TABLE `pengajars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `penggunavps`
 --
 ALTER TABLE `penggunavps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `visiter`
 --
 ALTER TABLE `visiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
