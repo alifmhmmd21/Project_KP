@@ -72,7 +72,7 @@ $query = mysqli_query($conn, $sql1);
 
     </div>
 
-    <div id="main" style="margin-left: 18%;">
+    <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
                 <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
@@ -80,7 +80,7 @@ $query = mysqli_query($conn, $sql1);
                 <div class="dropdown text-end ms-auto">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+                        <img src="../asset/user.png" alt="mdo" width="32" height="32" class="rounded-circle" />
                     </a>
                     <ul class="dropdown-menu text-small" style="">
                         <li><a class="dropdown-item" href="../login/logout.php">Sign out</a></li>

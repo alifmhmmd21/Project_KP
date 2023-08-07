@@ -33,6 +33,9 @@ $nomor = $halaman_awal + 1;
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/data.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -55,7 +58,7 @@ $nomor = $halaman_awal + 1;
 
     </div>
 
-    <div id="main" style="margin-left: 18%;">
+    <div id="main" style="margin-left: 18%;font-family: 'Inter', sans-serif;">
         <header class="p-3 mb-3 border-bottom" style="background-color: white; box-shadow: 1px 1px 6px 1px grey;">
             <div class="d-flex flex-wrap">
                 <button id="openNav" class="w3-button w3-xlarge" style="padding:0px 16px; display: none"
@@ -63,7 +66,7 @@ $nomor = $halaman_awal + 1;
                 <div class="dropdown text-end ms-auto">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
+                        <img src="../asset/user.png" alt="mdo" width="32" height="32" class="rounded-circle" />
                     </a>
                     <ul class="dropdown-menu text-small" style="">
                         <li><a class="dropdown-item" href="../login/logout.php">Sign out</a></li>

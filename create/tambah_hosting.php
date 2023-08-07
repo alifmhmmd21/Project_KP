@@ -1,18 +1,20 @@
+<!-- Insert Database -->
 <?php
-    require '../quer/config.php';
-            $no_ktp = $_POST['noktp'];
-            $nama=$_POST['nama'];
-            $alamat = $_POST['alamat'];
-            $no_hp = $_POST['nohp'];
-            $tujuan = $_POST['pesan'];
+require '../quer/config.php';
+$ktp = $_POST['ktp'];
+$nama = $_POST['nama'];
+$alamat = $_POST['alamat'];
+$hp = $_POST['hp'];
+$subdomain = $_POST['subdomain'];
+$domain = $_POST['domain'];
 
-            $akhir = "INSERT INTO visiter (no_ktp,nama,alamat,no_hp,tujuan) VALUES('$no_ktp','$nama','$alamat','$no_hp','$tujuan')";
+$akhir = "INSERT INTO penggunahosting (ktp,nama,alamat,hp,subdomain,domain) VALUES('$ktp','$nama','$alamat','$hp','$subdomain','$domain')";
 
-            $query = mysqli_query($conn,$akhir);
-            if($query){
-                header('location:../dashboard/DataPengunjung.php');
-                }else{
-                echo"Gagal Disimpan";
-            }
+$query = mysqli_query($conn, $akhir);
+if ($query) {
+    header('location:../dashboard/DataPenggunaHosting.php');
+} else {
+    echo "Gagal Disimpan";
+}
 
 ?>
