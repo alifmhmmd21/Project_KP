@@ -12,12 +12,13 @@ $per_halaman = 5;
 if ($katakunci != '') {
     $array_katakunci = explode(" ", $katakunci);
     for ($x = 0; $x < count($array_katakunci); $x++) {
-        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
+        $sqlcari[] = "(name like '%" . $array_katakunci[$x] . "%' or email like '%" . $array_katakunci[$x] . "%' or phone like '%" . $array_katakunci[$x] . "%')";
     }
     $sqltambahan = " where" . implode(" or", $sqlcari);
 }
 //Search Bar End
 
+//Show Data Start
 $sql1 = "select * from pengajars $sqltambahan";
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $mulai = ($page > 1) ? ($page * $per_halaman) - $per_halaman : 0;

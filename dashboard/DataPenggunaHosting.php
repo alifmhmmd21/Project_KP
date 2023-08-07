@@ -11,7 +11,7 @@ $per_halaman = 5;
 if ($katakunci != '') {
     $array_katakunci = explode(" ", $katakunci);
     for ($x = 0; $x < count($array_katakunci); $x++) {
-        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or hp like '%" . $array_katakunci[$x] . "%')";
+        $sqlcari[] = "(nama like '%" . $array_katakunci[$x] . "%' or ktp like '%" . $array_katakunci[$x] . "%' or alamat like '%" . $array_katakunci[$x] . "%')";
     }
     $sqltambahan = " where" . implode(" or", $sqlcari);
 }
