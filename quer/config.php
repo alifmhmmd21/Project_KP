@@ -1,8 +1,8 @@
 <?php
-$databaseHost = 'localhost';
+$databaseHost = 'https://pegawai.xcode.co.id/rahasia2';
 $databaseName = 'xcode';
 $databaseUsername = 'root';
-$databasePassword = '';
+$databasePassword = 'Powerled21';
 $conn = new mysqli(
   $databaseHost,
   $databaseUsername,
