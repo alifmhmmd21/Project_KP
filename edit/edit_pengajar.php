@@ -62,6 +62,9 @@ if (isset($_POST['simpan'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="">
+                <a href="../dashboard/DataPenggunaVPS.php">
+                        <i class="fa fa-solid fa-circle-xmark" style="float: right; display: flex; align-items: flex-end; position: absolute; top: 20px; right: 20px; font-size:25px; color:#ff0000;"></i>     
+                    </a>
                     <div class="modal-header">
                         <h2 class="modal-title">Edit Data Pengajar</h>
                     </div>
