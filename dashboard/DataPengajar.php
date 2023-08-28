@@ -58,9 +58,10 @@ $query = mysqli_query($conn, $sql1);
 
 <body>
     <!-- Sidebar Container -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="font-family: 'Inter', sans-serif; display:none"
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left "
+        style="font-family: 'Inter', sans-serif; display:none; background-color: #39474A; color: white; "
         id="mySidebar">
-        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <button class="w3-bar-item w3-button w3-large w3-hover-red" onclick="w3_close()">Close &times;</button>
         <a href="Home.php" class="w3-bar-item w3-button">Home</a>
         <a href="DataPenggunaHosting.php" class="w3-bar-item w3-button">Data Pengguna Hosting</a>
         <a href="DataPenggunaVPS.php" class="w3-bar-item w3-button">Data Pengguna VPS</a>
