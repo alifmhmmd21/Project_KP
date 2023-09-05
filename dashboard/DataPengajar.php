@@ -151,7 +151,7 @@ $query = mysqli_query($conn, $sql1);
                                             <?php echo $data['email'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['phone'] ?>
+                                            <?php echo '+62' . $data['phone'] ?>
                                         </td>
                                         <td>
                                             <?php echo $data['address'] ?>

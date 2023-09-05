@@ -152,7 +152,7 @@ $query = mysqli_query($conn, $sql1);
                                             <?php echo $data['alamat']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data['no_hp']; ?>
+                                            <?php echo '+62' . $data['no_hp']; ?>
                                         </td>
                                         <td style="overflow: auto">
                                             <?php echo $data['tujuan']; ?>
